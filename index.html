@@ -264,12 +264,96 @@ footer li{margin:3px 0;break-inside:avoid}
 .ck-item .tag{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--warn);color:var(--warnink);border:1px solid var(--warnline);white-space:nowrap;align-self:center}
 .ck-item:has(input:checked) span{text-decoration:line-through;color:var(--muted)}
 .ck-hide .ck-item:has(input:checked){display:none}
+/* Navegación por pestañas */
+:root{--tb:60px}
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:var(--tb);padding:8px max(20px,calc((100% - 1120px)/2 + 20px));background:var(--bg);background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;flex-direction:column;line-height:1.15;color:var(--ink);text-decoration:none;min-width:0}
+.brand b{font:800 1.12rem "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.01em}
+.brand small{color:var(--muted);font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tabs{display:flex;gap:4px}
+.tabs a{display:flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:700;font-size:.94rem}
+.tabs a:hover{background:var(--soft)}
+.tabs a[aria-current="page"]{background:var(--selva);color:var(--btnink)}
+.view{display:none}
+.view.on{display:block;animation:vin .18s ease-out}
+@keyframes vin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.on{animation:none}}
+.view>section:first-child{margin-top:28px}
+body:not([data-view="inicio"]) .hero{display:none}
+.view [id]{scroll-margin-top:calc(var(--tb) + 64px)}
+.subnav{position:sticky;top:var(--tb);z-index:8;display:flex;gap:8px;overflow-x:auto;margin:16px -20px 0;padding:10px 20px;background:var(--bg);scrollbar-width:none}
+.subnav::-webkit-scrollbar{display:none}
+.subnav a{flex:none;min-height:38px;display:flex;align-items:center;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font-weight:700;font-size:.9rem;text-decoration:none}
+.subnav a:hover{border-color:var(--selva);color:var(--selva)}
+.view>.subnav+section{margin-top:18px}
+.ck-top{top:var(--tb)!important}
+.hero{min-height:min(62vh,560px)!important}
+@media (max-width:820px){
+  .topbar{padding:8px 16px;-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--bg)}
+  .hero{min-height:min(46vh,400px)!important}
+  .hero h1{font-size:clamp(2.8rem,13vw,4.2rem)!important}
+  .tabs{position:fixed;left:0;right:0;bottom:0;z-index:40;gap:2px;justify-content:space-around;padding:6px 4px calc(6px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -2px 12px rgba(0,0,0,.06)}
+  .tabs a{flex:1 1 0;min-width:0;flex-direction:column;gap:1px;padding:6px 2px;border-radius:12px;font-size:.7rem;font-weight:700;color:var(--muted)}
+  .tabs a span{font-size:1.3rem;line-height:1.2}
+  .tabs a[aria-current="page"]{background:var(--soft);color:var(--ink)}
+  body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
+  .subnav{margin:12px -16px 0;padding:10px 16px}
+}
+@media (max-width:600px){
+  .final table{min-width:0}
+  .final thead{display:none}
+  .final tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:11px 14px;border-top:1px solid var(--line)}
+  .final tbody tr:first-child{border-top:0}
+  .final tbody th,.final tbody td{border:0;padding:0}
+  .final tbody td:not(.num){grid-column:1/-1;grid-row:2;color:var(--muted);font-size:.92rem}
+  .final tbody td:not(.num):empty{display:none}
+  .final tbody td.num{grid-row:1;grid-column:2;font-weight:700}
+}
+/* Clima */
+.cl-scale,.cl-bar{display:grid;grid-template-columns:6.5rem minmax(0,1fr) 5.5rem;gap:10px;align-items:center}
+.cl-scale{color:var(--muted);font-size:.78rem;margin-top:8px}
+.cl-scale span{grid-column:2;display:none}
+.cl-scale{position:relative}
+.cl-bars{display:flex;flex-direction:column;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.cl-bar{color:var(--ink);text-decoration:none;padding:6px 0}
+.cl-bar b{font-size:.98rem}
+.cl-bar em{font-style:normal;font-weight:700;font-variant-numeric:tabular-nums;text-align:right;font-size:.95rem}
+.cl-bar .trk{position:relative;height:12px;border-radius:999px;background:var(--soft)}
+.cl-bar .trk i{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--c);left:calc((var(--a) + 5) / 45 * 100%);width:calc((var(--b) - var(--a)) / 45 * 100%)}
+.cl-axis{position:relative;height:1.1em;color:var(--muted);font-size:.75rem;margin:2px calc(5.5rem + 10px) 0 calc(6.5rem + 10px)}
+.cl-axis span{position:absolute;left:calc((var(--v) + 5) / 45 * 100%);transform:translateX(-50%)}
+.cl-card{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:16px;padding:18px 20px;margin-top:16px}
+.cl-card header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-bottom:12px}
+.cl-card h3{font-size:clamp(1.5rem,4vw,1.9rem)}
+.cl-card header small{color:var(--muted);font-weight:700}
+.cl-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.cl-stats div{background:var(--soft);border-radius:12px;padding:10px 12px}
+.cl-stats b{display:block;font:800 1.15rem "Bricolage Grotesque",system-ui,sans-serif}
+.cl-stats small{color:var(--muted);font-size:.82rem}
+.cl-card p{margin:0 0 10px}
+.cl-fc{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:10px;scrollbar-width:thin}
+.cl-fc span{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:68px;padding:8px 6px;border:1px solid var(--line);border-radius:12px;font-size:.88rem;font-variant-numeric:tabular-nums}
+.cl-fc b{font:800 1rem "Bricolage Grotesque",system-ui,sans-serif}
+.cl-wear{background:color-mix(in srgb,var(--c) 10%,var(--paper));border-radius:12px;padding:10px 14px}
+.cl-link{font-weight:700;font-size:.92rem}
+@media (max-width:600px){.cl-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.cl-scale,.cl-bar{grid-template-columns:5.2rem minmax(0,1fr) 4.6rem}.cl-axis{margin-left:calc(5.2rem + 10px);margin-right:calc(4.6rem + 10px)}}
 @media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 @media (max-width:600px){.car-nav{width:38px;height:38px}}
 
 </style>
 </head>
 <body>
+<header class="topbar">
+  <a class="brand" href="#inicio"><b>Selva, sillar y lago</b><small>17–31 oct · Tarapoto · Arequipa · Puno</small></a>
+  <nav class="tabs" aria-label="Secciones">
+    <a href="#inicio" data-tab="inicio"><span aria-hidden="true">🗓️</span>Inicio</a>
+    <a href="#dias" data-tab="dias"><span aria-hidden="true">📍</span>Días</a>
+    <a href="#clima" data-tab="clima"><span aria-hidden="true">🌤️</span>Clima</a>
+    <a href="#costos" data-tab="costos"><span aria-hidden="true">💰</span>Costos</a>
+    <a href="#equipaje" data-tab="equipaje"><span aria-hidden="true">🧳</span>Equipaje</a>
+    <a href="#consejos" data-tab="consejos"><span aria-hidden="true">💡</span>Consejos</a>
+  </nav>
+</header>
 <header class="hero">
   <img id="hero-img" alt="Plaza de Armas de Arequipa con el volcán Misti al fondo">
   <div class="wrap">
@@ -279,6 +363,7 @@ footer li{margin:3px 0;break-inside:avoid}
   <span class="credit">Foto: <a href="https://live.staticflickr.com/4089/5096680025_c3a920e2ae_h.jpg" target="_blank" rel="noopener">Flickr</a></span>
 </header>
 <main class="wrap">
+  <div class="view" data-view="inicio" id="v-inicio" aria-label="Inicio">
   <div class="route">
     <div><small style="color:var(--muted)">Salida · sáb 17</small><b>Lima</b></div>
     <div><small style="color:var(--selva)">Selva · 5 noches</small><b>Tarapoto</b></div>
@@ -286,19 +371,130 @@ footer li{margin:3px 0;break-inside:avoid}
     <div><small style="color:var(--lago)">Altiplano · 4 noches</small><b>Puno y Titicaca</b></div>
     <div><small style="color:var(--muted)">Regreso · sáb 31</small><b>Lima, vuelo desde Juliaca</b></div>
   </div>
-  <div class="controls one">
-    <div><h3>Presupuesto</h3><div class="seg" data-key="budget">
-      <button type="button" data-v="eco">Económica</button>
-      <button type="button" data-v="opt">Precio-calidad</button>
-      <button type="button" data-v="pre">Premium</button></div></div>
-  </div>
-  <a class="jump" href="#equipaje">🧳 Checklist de equipaje y compras</a>
   <section class="crono-sec" id="cronograma">
     <div class="crono-head"><h2>Cronograma</h2><p>Toca un día para ir a su detalle. Horas aproximadas salvo las reservadas.</p></div>
     <div class="stays"><div class="stay selva"><b>Tarapoto · Airbnb ✓</b><small>sáb 17 → jue 22 · 5 noches</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay aqp"><b>Arequipa · Airbnb</b><small>jue 22 → mar 27 · 5 noches</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay puno"><b>Puno · Airbnb</b><small>mar 27 → sáb 31 · 4 noches (recomendado sin cortar)</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay puno"><b>Lodge en los Uros</b><small>mié 28 → jue 29 · 1 noche</small><div class="hrs"><span>Check-in <b>12:00</b></span><span>Check-out <b>11:00</b></span></div></div></div>
     <ol class="crono" id="crono"></ol>
     <p class="fine">El check-in de los Airbnb muchas veces se puede adelantar o se pueden dejar maletas antes: pregúntenle al anfitrión al reservar y revisen las reseñas, que suelen mencionarlo.</p>
   </section>
+  <section class="twin">
+    <div class="panel">
+      <h3 style="font-size:1.3rem;margin-bottom:6px">Perfil de altitud</h3>
+      <svg viewBox="0 0 640 180" role="img" aria-label="Altitud: Tarapoto 350 m, Arequipa 2,335 m, mirador de Patapampa en el Colca 4,910 m, Puno 3,830 m">
+        <line x1="20" y1="160" x2="620" y2="160" stroke="var(--line)"/>
+        <path d="M20 151 L190 151 C220 151 225 97 255 97 L330 97 C345 97 350 28 365 28 C380 28 385 97 400 97 L450 97 C480 97 485 57 515 57 L620 57" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+        <rect x="20" y="143" width="170" height="10" rx="3" fill="var(--selva)"/>
+        <rect x="255" y="89" width="195" height="10" rx="3" fill="var(--sillar)"/>
+        <rect x="515" y="49" width="105" height="10" rx="3" fill="var(--lago)"/>
+        <g font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="14" font-weight="700" fill="var(--ink)">
+          <text x="24" y="135">Tarapoto</text><text x="259" y="81">Arequipa</text><text x="300" y="20">Patapampa</text><text x="519" y="41">Puno</text>
+        </g>
+        <g font-family="Source Sans 3, system-ui, sans-serif" font-size="12" font-weight="400" fill="var(--muted)">
+          <text x="92" y="135">350 m</text><text x="259" y="118">2,335 m</text><text x="380" y="20">4,910 m</text><text x="558" y="41">3,830 m</text>
+        </g>
+      </svg>
+      <div class="legend"><span>17–22 · San Martín</span><span>22–27 · Arequipa</span><span>27–31 · Puno</span></div>
+    </div>
+    <div class="note">
+      <h3>Antes de salir</h3>
+      <p>Viernes 16: salen del trabajo a las 6 pm y quedan libres a las 9 pm en Villa El Salvador. El último vuelo a Tarapoto de ese día sale 19:20, así que el viaje empieza el sábado 17 por la mañana.</p>
+      <p>Sábado 31: vuelo de Juliaca a Lima. Tienen el domingo para descansar antes de volver al trabajo el lunes.</p>
+      <p>Puno está a 3,830 m. Llegan después del Colca y de 5 días en Arequipa, así que el cuerpo ya estará aclimatado; igual, el primer día vayan con calma.</p>
+    </div>
+  </section>
+  </div>
+  <div class="view" data-view="dias" id="v-dias" aria-label="Día a día">
+  <nav class="subnav" aria-label="Regiones">
+    <a href="#r-selva">🌿 Tarapoto</a><a href="#r-aqp">🏛️ Arequipa y Colca</a><a href="#r-puno">🚣 Puno</a><a href="#domingos">Tours en domingo</a>
+  </nav>
+  <section id="dias-sec">
+    <h2>Día a día</h2>
+    <div class="region selva" id="r-selva">
+      <div class="region-head"><span class="pill">Selva</span><h3>Tarapoto y alrededores · San Martín</h3></div>
+      <p class="clim">Calor de 33–36 °C y humedad alta. Repelente, bloqueador y vacuna de fiebre amarilla (mínimo 10 días antes).</p>
+      <ol class="days" id="days-selva"></ol>
+    </div>
+    <div class="region aqp" id="r-aqp">
+      <div class="region-head"><span class="pill">Sillar</span><h3>Arequipa y Cañón del Colca</h3></div>
+      <p class="clim">Seco y soleado, noches frías. El Colca va en el tercer día para que el cuerpo se acostumbre primero a los 2,335 m de Arequipa. Abrigo para la madrugada y para Patapampa (4,910 m).</p>
+      <ol class="days" id="days-aqp"></ol>
+    </div>
+    <div class="region puno" id="r-puno">
+      <div class="region-head"><span class="pill">Lago</span><h3>Puno y lago Titicaca</h3></div>
+      <p class="clim">Frío y seco: de día 14–16 °C con sol fuerte, de noche cerca de 0 °C. Casaca, gorro, bloqueador y lentes de sol. Tomen mate de coca y coman ligero el primer día.</p>
+      <ol class="days" id="days-puno"></ol>
+    </div>
+  </section>
+  <section id="domingos">
+    <h2>¿Operan los tours en domingo?</h2>
+    <div class="grid2">
+      <div class="card"><h3>Tarapoto · domingo 18</h3><ul>
+        <li>Sí. Las agencias locales anuncian salidas diarias a Laguna Azul, Alto Mayo, Ahuashiyacu y Lamas, y los full day de Laguna Azul se venden de lunes a domingo.</li>
+        <li>Varias exigen reservar con 48 h de anticipación: cierren el tour del domingo antes de viajar, no al llegar el sábado.</li>
+        <li>Los fines de semana va más gente local a la laguna. Por eso el domingo va Laguna Azul (tour largo que igual se disfruta con gente) y los lugares más chicos quedan para días de semana.</li></ul></div>
+      <div class="card"><h3>Arequipa · domingo 25</h3><ul>
+        <li>El domingo 25 va la Ruta del Sillar. Las agencias la venden todos los días, pero confirmen la salida dominical al reservar.</li>
+        <li>El Colca full day del sábado 24 también sale a diario.</li>
+        <li>El Museo Santuarios Andinos (Juanita) tiene horario reducido o cierra los domingos según la fuente, y lunes también varía. Por eso va el viernes 23.</li>
+        <li>El Monasterio de Santa Catalina abre todos los días.</li></ul></div>
+    </div>
+  </section>
+  </div>
+  <div class="view" data-view="clima" id="v-clima" aria-label="Clima">
+  <nav class="subnav" aria-label="Destinos">
+    <a href="#cl-tarapoto">Tarapoto</a><a href="#cl-arequipa">Arequipa</a><a href="#cl-colca">Colca</a><a href="#cl-puno">Puno</a>
+  </nav>
+  <section id="clima-sec" class="clima">
+    <h2>Clima en cada destino</h2>
+    <p class="sub">Del calor húmedo de la selva al frío del altiplano en dos semanas. Abajo, el rango de temperatura de cada lugar en la misma escala, qué esperar y cómo vestirse.</p>
+        <div class="cl-bars">
+      <a class="cl-bar selva" href="#cl-tarapoto"><b>Tarapoto</b><span class="trk"><i style="--a:22;--b:34"></i></span><em>22–34 °C</em></a>
+      <a class="cl-bar aqp" href="#cl-arequipa"><b>Arequipa</b><span class="trk"><i style="--a:10;--b:25"></i></span><em>10–25 °C</em></a>
+      <a class="cl-bar cusco" href="#cl-colca"><b>Colca</b><span class="trk"><i style="--a:-3;--b:21"></i></span><em>−3–21 °C</em></a>
+      <a class="cl-bar puno" href="#cl-puno"><b>Puno</b><span class="trk"><i style="--a:2;--b:16"></i></span><em>2–16 °C</em></a>
+      <div class="cl-axis" aria-hidden="true"><span style="--v:0">0°</span><span style="--v:10">10°</span><span style="--v:20">20°</span><span style="--v:30">30°</span></div>
+    </div>
+
+    <article class="cl-card selva" id="cl-tarapoto">
+      <header><span class="pill">Selva · 350 m</span><h3>Tarapoto</h3><small>sáb 17 → jue 22</small></header>
+      <div class="cl-stats"><div><b>~31–35 °C</b><small>de día</small></div><div><b>~22–24 °C</b><small>de noche</small></div><div><b>Lluvia</b><small>chubascos casi a diario</small></div><div><b>~87 %</b><small>humedad</small></div></div>
+      <p>Octubre es de los meses más lluviosos: llueve fuerte pero en chubascos cortos, sobre todo por la tarde, y luego vuelve el sol. Calor pegajoso todo el día.</p>
+      <div class="cl-fc" aria-label="Pronóstico"><span><b>17</b>35°/24° 🌦</span><span><b>18</b>32°/24° 🌦</span><span><b>19</b>33°/24° 🌦</span><span><b>20</b>33°/23° 🌦</span><span><b>21</b>31°/24° 🌧</span><span><b>22</b>34°/24° 🌦</span></div>
+      <p class="cl-wear"><b>Ponte:</b> polos dry-fit, shorts, sandalias, ropa de baño, gorra y repelente. Poncho de lluvia en la mochila. El martes 21 se ve el día más lluvioso: buen día para Lamas o algo corto.</p>
+      <a class="cl-link" href="https://www.tutiempo.net/tarapoto.html" target="_blank" rel="noopener">Ver pronóstico actualizado ↗</a>
+    </article>
+
+    <article class="cl-card aqp" id="cl-arequipa">
+      <header><span class="pill">Sillar · 2,335 m</span><h3>Arequipa</h3><small>jue 22 → lun 26</small></header>
+      <div class="cl-stats"><div><b>~23–26 °C</b><small>de día</small></div><div><b>~10–16 °C</b><small>de noche</small></div><div><b>Casi nunca</b><small>llueve en octubre</small></div><div><b>Muy fuerte</b><small>sol de altura</small></div></div>
+      <p>Seco y despejado, el mejor clima del viaje. De día se camina en polo; al caer el sol baja rápido la temperatura y en la noche se siente fresco.</p>
+      <div class="cl-fc" aria-label="Pronóstico"><span><b>22</b>26°/16° ☀️</span><span><b>23</b>26°/17° ☀️</span><span><b>24</b>25°/18° ☀️</span><span><b>25</b>22°/12° ⛅</span><span><b>26</b>20°/12° ⛅</span></div>
+      <p class="cl-wear"><b>Ponte:</b> polo y jean de día, bloqueador SPF 50+, lentes y gorra. Para la cena del aniversario y el atardecer en Yanahuara, lleva la casaca polar.</p>
+      <a class="cl-link" href="https://www.tutiempo.net/arequipa.html" target="_blank" rel="noopener">Ver pronóstico actualizado ↗</a>
+    </article>
+
+    <article class="cl-card cusco" id="cl-colca">
+      <header><span class="pill">Altura · hasta 4,910 m</span><h3>Cañón del Colca</h3><small>sáb 24 · sale ~3 am</small></header>
+      <div class="cl-stats"><div><b>~21 °C</b><small>de día en Chivay</small></div><div><b>~2 °C</b><small>madrugada en Chivay</small></div><div><b>Bajo 0 °C</b><small>al amanecer en Patapampa</small></div><div><b>Viento</b><small>en los miradores</small></div></div>
+      <p>La parte más fría de todo el viaje: salen de madrugada, cruzan Patapampa (4,910 m) con helada y viento, y de día en el cañón hace sol y calor. Hay que vestirse en capas e ir sacándose ropa.</p>
+      <p class="cl-wear"><b>Ponte:</b> térmica (polo y pantalón), casaca polar + casaca exterior, gorro, guantes y buff. Ropa de baño para las termales y bloqueador para el mediodía.</p>
+    </article>
+
+    <article class="cl-card puno" id="cl-puno">
+      <header><span class="pill">Altiplano · 3,830 m</span><h3>Puno y Titicaca</h3><small>lun 26 → sáb 31</small></header>
+      <div class="cl-stats"><div><b>~14–16 °C</b><small>de día</small></div><div><b>~2–5 °C</b><small>de noche (puede tocar 0 °C)</small></div><div><b>Poca</b><small>alguna lluvia ligera</small></div><div><b>Viento</b><small>desde fines de octubre</small></div></div>
+      <p>Frío seco con sol muy fuerte: al sol se está bien, a la sombra y de noche hace frío de verdad. En el lago y en la noche en los Uros el viento lo hace sentir más frío. Los alojamientos rara vez tienen calefacción.</p>
+      <div class="cl-fc" aria-label="Pronóstico"><span><b>26</b>10°/3° 🌦</span><span><b>27</b>14°/5° ⛅</span><span><b>28</b>16°/7° ⛅</span><span><b>29</b>16°/7° ⛅</span><span><b>30</b>16°/6° ⛅</span></div>
+      <p class="cl-wear"><b>Ponte:</b> capas todo el día (polo + polar + casaca), gorro y guantes en la noche y en el bote, térmica para dormir. Bloqueador, bálsamo labial y lentes aunque haga frío.</p>
+      <a class="cl-link" href="https://www.tutiempo.net/puno.html" target="_blank" rel="noopener">Ver pronóstico actualizado ↗</a>
+    </article>
+    <p class="fine">Promedios de octubre de Weather Spark, Adonde y Cuando y Wikipedia (Chivay); pronóstico día a día de tutiempo.net visto el 16 de octubre. Más allá de 5–7 días el pronóstico cambia bastante: revísenlo el día anterior.</p>
+  </section>
+  </div>
+  <div class="view" data-view="costos" id="v-costos" aria-label="Costos">
+  <nav class="subnav" aria-label="Secciones de costos">
+    <a href="#plan-final">Plan final</a><a href="#vuelos">Vuelos</a><a href="#precios">Precios clave</a><a href="#presupuesto">Presupuesto</a><a href="#comparacion">Comparación</a><a href="#bbva">BBVA</a>
+  </nav>
   <section class="final" id="plan-final">
     <h2>Plan final y costos</h2>
     <p class="sub" style="color:var(--muted);margin:6px 0 0">Costos para los dos, en soles. Lo marcado con ✓ ya está pagado; lo demás es aproximado.</p>
@@ -332,31 +528,6 @@ footer li{margin:3px 0;break-inside:avoid}
         <li>Reservar el tour del Colca full day del sábado 24 (sale ~3 am).</li></ul></div>
     </div>
   </section>
-  <section class="twin">
-    <div class="panel">
-      <h3 style="font-size:1.3rem;margin-bottom:6px">Perfil de altitud</h3>
-      <svg viewBox="0 0 640 180" role="img" aria-label="Altitud: Tarapoto 350 m, Arequipa 2,335 m, mirador de Patapampa en el Colca 4,910 m, Puno 3,830 m">
-        <line x1="20" y1="160" x2="620" y2="160" stroke="var(--line)"/>
-        <path d="M20 151 L190 151 C220 151 225 97 255 97 L330 97 C345 97 350 28 365 28 C380 28 385 97 400 97 L450 97 C480 97 485 57 515 57 L620 57" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
-        <rect x="20" y="143" width="170" height="10" rx="3" fill="var(--selva)"/>
-        <rect x="255" y="89" width="195" height="10" rx="3" fill="var(--sillar)"/>
-        <rect x="515" y="49" width="105" height="10" rx="3" fill="var(--lago)"/>
-        <g font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="14" font-weight="700" fill="var(--ink)">
-          <text x="24" y="135">Tarapoto</text><text x="259" y="81">Arequipa</text><text x="300" y="20">Patapampa</text><text x="519" y="41">Puno</text>
-        </g>
-        <g font-family="Source Sans 3, system-ui, sans-serif" font-size="12" font-weight="400" fill="var(--muted)">
-          <text x="92" y="135">350 m</text><text x="259" y="118">2,335 m</text><text x="380" y="20">4,910 m</text><text x="558" y="41">3,830 m</text>
-        </g>
-      </svg>
-      <div class="legend"><span>17–22 · San Martín</span><span>22–27 · Arequipa</span><span>27–31 · Puno</span></div>
-    </div>
-    <div class="note">
-      <h3>Antes de salir</h3>
-      <p>Viernes 16: salen del trabajo a las 6 pm y quedan libres a las 9 pm en Villa El Salvador. El último vuelo a Tarapoto de ese día sale 19:20, así que el viaje empieza el sábado 17 por la mañana.</p>
-      <p>Sábado 31: vuelo de Juliaca a Lima. Tienen el domingo para descansar antes de volver al trabajo el lunes.</p>
-      <p>Puno está a 3,830 m. Llegan después del Colca y de 5 días en Arequipa, así que el cuerpo ya estará aclimatado; igual, el primer día vayan con calma.</p>
-    </div>
-  </section>
   <section id="vuelos">
     <div class="flhead">
       <div><h2>Vuelos</h2><p class="sub">Del sábado 17 al sábado 31 de octubre de 2026 (15 días, 14 noches)</p></div>
@@ -365,7 +536,31 @@ footer li{margin:3px 0;break-inside:avoid}
     <div class="flights" id="flights"></div>
     <p class="fine">El vuelo Lima → Tarapoto ya está comprado (precio pagado dividido entre dos). Los otros dos son precios por persona en económica, sin equipaje facturado, vistos en Google Flights el 27 de setiembre de 2026. JetSMART y Sky cobran aparte la maleta de mano de 10 kg; LATAM la incluye en casi todas sus tarifas. No hay vuelo directo Tarapoto–Arequipa: todos conectan en Lima con un solo boleto.</p>
   </section>
-  <section class="budget">
+  <section id="precios">
+    <h2>Precios clave</h2>
+    <div class="grid2">
+      <div class="card"><h3>Tours en Tarapoto</h3><ul>
+        <li>Laguna Azul S/90–110 · Ahuashiyacu S/45–50 · Lamas S/40–50.</li>
+        <li>Alto Mayo (Moyobamba, Tingana, Tioyacu) full day ~S/100–130 · Chazuta ~S/90–120.</li>
+        <li>Juane ~S/32, tacacho con cecina ~S/30 en restaurante; menú S/15–25.</li></ul></div>
+      <div class="card"><h3>Arequipa y Colca (solo efectivo en entradas)</h3><ul>
+        <li>Boleto del Colca: S/20 peruanos, se paga en el camino.</li>
+        <li>Tour Colca full day compartido: ~S/90–130 por persona; baños termales ~S/15 aparte.</li>
+        <li>Museo Santuarios Andinos (Juanita): S/20.</li>
+        <li>Ruta del Sillar: ~S/40–60 por persona.</li></ul></div>
+      <div class="card"><h3>Puno y Titicaca</h3><ul>
+        <li>Bus Arequipa → Puno (RedBus, 27 oct): de día Turismo Zolorzano 08:00–14:00 o 09:15–14:00 (S/29–40, reseñas bajas) y Transzela 05:00–11:00 (S/40–60). Los mejor calificados son nocturnos: Turismo Mer 22:30 (4.2/5) y Huayruro 22:35 (4.8/5), pero llegan a las 5 am. Cruz del Sur no aparece en RedBus: revisen su web.</li>
+        <li>Lodge en los Uros: check-in 12:00, check-out 11:00; muchos solo aceptan efectivo. Taquile full day ~S/90–120 por persona · Sillustani ~S/40–60.</li>
+        <li>Al lodge lleven solo una mochila: los botes son pequeños y las maletas se quedan en el Airbnb de Puno.</li></ul></div>
+    </div>
+  </section>
+  <div class="controls one">
+    <div><h3>Presupuesto</h3><div class="seg" data-key="budget">
+      <button type="button" data-v="eco">Económica</button>
+      <button type="button" data-v="opt">Precio-calidad</button>
+      <button type="button" data-v="pre">Premium</button></div></div>
+  </div>
+  <section class="budget" id="presupuesto">
     <div>
       <h2>Presupuesto</h2>
       <p class="fine" style="margin:4px 0 0">Referencia del plan inicial de 12 noches.</p>
@@ -374,6 +569,22 @@ footer li{margin:3px 0;break-inside:avoid}
       <p id="b-tag"></p>
     </div>
     <div class="rows" id="b-rows"></div>
+  </section>
+  <section id="comparacion">
+    <h2>Comparación de presupuestos</h2>
+    <p class="fine" style="margin-top:0">Referencia del plan inicial (Tarapoto + Arequipa, 12 noches). El costo actualizado del viaje está en "Plan final y costos".</p>
+    <div class="scroll"><table>
+      <thead><tr><th></th><th>Económica</th><th>Precio-calidad</th><th>Premium</th></tr></thead>
+      <tbody>
+        <tr><th>Transporte</th><td>Low-cost sin maleta + taxi por app</td><td>Vuelos con maleta de mano + apps</td><td>LATAM flexible + traslados privados</td></tr>
+        <tr><th>Vuelos</th><td>~S/830 p/p</td><td>~S/1,000 p/p</td><td>~S/1,500 p/p</td></tr>
+        <tr><th>Noche de hotel</th><td>~S/60–110</td><td>~S/230–350</td><td>~S/500–750</td></tr>
+        <tr><th>Tours</th><td>Compartidos</td><td>Grupos pequeños</td><td>Privados</td></tr>
+        <tr><th>Comida por día</th><td>~S/55</td><td>~S/100</td><td>~S/200</td></tr>
+        <tr class="sum"><th>Por persona</th><td>≈ S/2,900</td><td>≈ S/5,100</td><td>≈ S/11,000</td></tr>
+        <tr class="sum"><th>Por pareja</th><td>≈ S/5,800</td><td>≈ S/10,200</td><td>≈ S/22,000</td></tr>
+      </tbody>
+    </table></div>
   </section>
   <section class="bbva" id="bbva">
     <div class="bbva-head">
@@ -402,72 +613,8 @@ footer li{margin:3px 0;break-inside:avoid}
     </div>
     <p class="fine">El paquete vuelo + hotel que salía en la cuenta (Lima–Tarapoto–Lima, 26 al 30 de noviembre, US$160 por persona con puntos) no encaja con este viaje: son otras fechas e incluye el regreso a Lima desde Tarapoto.</p>
   </section>
-  <section>
-    <h2>Día a día</h2>
-    <div class="region selva">
-      <div class="region-head"><span class="pill">Selva</span><h3>Tarapoto y alrededores · San Martín</h3></div>
-      <p class="clim">Calor de 33–36 °C y humedad alta. Repelente, bloqueador y vacuna de fiebre amarilla (mínimo 10 días antes).</p>
-      <ol class="days" id="days-selva"></ol>
-    </div>
-    <div class="region aqp">
-      <div class="region-head"><span class="pill">Sillar</span><h3>Arequipa y Cañón del Colca</h3></div>
-      <p class="clim">Seco y soleado, noches frías. El Colca va en el tercer día para que el cuerpo se acostumbre primero a los 2,335 m de Arequipa. Abrigo para la madrugada y para Patapampa (4,910 m).</p>
-      <ol class="days" id="days-aqp"></ol>
-    </div>
-    <div class="region puno">
-      <div class="region-head"><span class="pill">Lago</span><h3>Puno y lago Titicaca</h3></div>
-      <p class="clim">Frío y seco: de día 14–16 °C con sol fuerte, de noche cerca de 0 °C. Casaca, gorro, bloqueador y lentes de sol. Tomen mate de coca y coman ligero el primer día.</p>
-      <ol class="days" id="days-puno"></ol>
-    </div>
-  </section>
-  <section>
-    <h2>¿Operan los tours en domingo?</h2>
-    <div class="grid2">
-      <div class="card"><h3>Tarapoto · domingo 18</h3><ul>
-        <li>Sí. Las agencias locales anuncian salidas diarias a Laguna Azul, Alto Mayo, Ahuashiyacu y Lamas, y los full day de Laguna Azul se venden de lunes a domingo.</li>
-        <li>Varias exigen reservar con 48 h de anticipación: cierren el tour del domingo antes de viajar, no al llegar el sábado.</li>
-        <li>Los fines de semana va más gente local a la laguna. Por eso el domingo va Laguna Azul (tour largo que igual se disfruta con gente) y los lugares más chicos quedan para días de semana.</li></ul></div>
-      <div class="card"><h3>Arequipa · domingo 25</h3><ul>
-        <li>El domingo 25 va la Ruta del Sillar. Las agencias la venden todos los días, pero confirmen la salida dominical al reservar.</li>
-        <li>El Colca full day del sábado 24 también sale a diario.</li>
-        <li>El Museo Santuarios Andinos (Juanita) tiene horario reducido o cierra los domingos según la fuente, y lunes también varía. Por eso va el viernes 23.</li>
-        <li>El Monasterio de Santa Catalina abre todos los días.</li></ul></div>
-    </div>
-  </section>
-  <section>
-    <h2>Comparación de presupuestos</h2>
-    <p class="fine" style="margin-top:0">Referencia del plan inicial (Tarapoto + Arequipa, 12 noches). El costo actualizado del viaje está en "Plan final y costos".</p>
-    <div class="scroll"><table>
-      <thead><tr><th></th><th>Económica</th><th>Precio-calidad</th><th>Premium</th></tr></thead>
-      <tbody>
-        <tr><th>Transporte</th><td>Low-cost sin maleta + taxi por app</td><td>Vuelos con maleta de mano + apps</td><td>LATAM flexible + traslados privados</td></tr>
-        <tr><th>Vuelos</th><td>~S/830 p/p</td><td>~S/1,000 p/p</td><td>~S/1,500 p/p</td></tr>
-        <tr><th>Noche de hotel</th><td>~S/60–110</td><td>~S/230–350</td><td>~S/500–750</td></tr>
-        <tr><th>Tours</th><td>Compartidos</td><td>Grupos pequeños</td><td>Privados</td></tr>
-        <tr><th>Comida por día</th><td>~S/55</td><td>~S/100</td><td>~S/200</td></tr>
-        <tr class="sum"><th>Por persona</th><td>≈ S/2,900</td><td>≈ S/5,100</td><td>≈ S/11,000</td></tr>
-        <tr class="sum"><th>Por pareja</th><td>≈ S/5,800</td><td>≈ S/10,200</td><td>≈ S/22,000</td></tr>
-      </tbody>
-    </table></div>
-  </section>
-  <section>
-    <h2>Precios clave</h2>
-    <div class="grid2">
-      <div class="card"><h3>Tours en Tarapoto</h3><ul>
-        <li>Laguna Azul S/90–110 · Ahuashiyacu S/45–50 · Lamas S/40–50.</li>
-        <li>Alto Mayo (Moyobamba, Tingana, Tioyacu) full day ~S/100–130 · Chazuta ~S/90–120.</li>
-        <li>Juane ~S/32, tacacho con cecina ~S/30 en restaurante; menú S/15–25.</li></ul></div>
-      <div class="card"><h3>Arequipa y Colca (solo efectivo en entradas)</h3><ul>
-        <li>Boleto del Colca: S/20 peruanos, se paga en el camino.</li>
-        <li>Tour Colca full day compartido: ~S/90–130 por persona; baños termales ~S/15 aparte.</li>
-        <li>Museo Santuarios Andinos (Juanita): S/20.</li>
-        <li>Ruta del Sillar: ~S/40–60 por persona.</li></ul></div>
-      <div class="card"><h3>Puno y Titicaca</h3><ul>
-        <li>Bus Arequipa → Puno (RedBus, 27 oct): de día Turismo Zolorzano 08:00–14:00 o 09:15–14:00 (S/29–40, reseñas bajas) y Transzela 05:00–11:00 (S/40–60). Los mejor calificados son nocturnos: Turismo Mer 22:30 (4.2/5) y Huayruro 22:35 (4.8/5), pero llegan a las 5 am. Cruz del Sur no aparece en RedBus: revisen su web.</li>
-        <li>Lodge en los Uros: check-in 12:00, check-out 11:00; muchos solo aceptan efectivo. Taquile full day ~S/90–120 por persona · Sillustani ~S/40–60.</li>
-        <li>Al lodge lleven solo una mochila: los botes son pequeños y las maletas se quedan en el Airbnb de Puno.</li></ul></div>
-    </div>
-  </section>
+  </div>
+  <div class="view" data-view="equipaje" id="v-equipaje" aria-label="Equipaje">
   <section id="equipaje">
     <h2>Checklist de equipaje y compras</h2>
     <p class="sub">Tres climas: calor húmedo en Tarapoto, sol fuerte y noches frías en Arequipa, y frío de verdad en el Colca y Puno. La idea es vestirse en capas, llevar ropa para ~7 días y lavar una vez a mitad del viaje. Marca cada cosa al comprarla o empacarla; se guarda en este celular.</p>
@@ -546,7 +693,9 @@ footer li{margin:3px 0;break-inside:avoid}
       </ul></div>
     </div>
   </section>
-  <section>
+  </div>
+  <div class="view" data-view="consejos" id="v-consejos" aria-label="Consejos">
+  <section id="consejos-sec">
     <h2>Consejos</h2>
     <div class="grid3">
       <div class="card dark"><h3>Reserven ya</h3><p style="margin:0">Los vuelos que faltan, el Colca del sábado 24 y el tour de Laguna Azul del domingo 18. Octubre tiene cupos limitados y los precios suben unos 40 días antes.</p></div>
@@ -565,6 +714,7 @@ footer li{margin:3px 0;break-inside:avoid}
     <p>Las fotos se tomaron de Google Imágenes para uso personal y se cargan directamente desde cada sitio, así que necesitan conexión a internet. Fuentes por lugar:</p>
     <ul id="credits"></ul>
   </footer>
+  </div>
 </main>
 <script>
 // Checklist de equipaje: [texto, detalle opcional, prioridad]
@@ -1442,6 +1592,26 @@ hero.src = 'https://live.staticflickr.com/4089/5096680025_c3a920e2ae_h.jpg';
 hero.onerror = () => hero.remove();
 renderStatic();
 render();
+// Navegación por pestañas
+(function(){
+  const VIEWS=['inicio','dias','clima','costos','equipaje','consejos'];
+  const views=document.querySelectorAll('.view'), tabs=document.querySelectorAll('.tabs a');
+  function show(hash,smooth){
+    const id=decodeURIComponent((hash||'').replace('#',''));
+    let view=VIEWS.includes(id)?id:null, target=null;
+    if(!view&&id){target=document.getElementById(id);view=target&&target.closest('.view')?target.closest('.view').dataset.view:null;}
+    view=view||'inicio';
+    const changed=document.body.dataset.view!==view;
+    document.body.dataset.view=view;
+    views.forEach(v=>v.classList.toggle('on',v.dataset.view===view));
+    tabs.forEach(a=>a.dataset.tab===view?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+    if(target){const go=b=>target.scrollIntoView({block:'start',behavior:b});requestAnimationFrame(()=>go((smooth&&!changed)?'smooth':'instant'));
+      if(!smooth||changed){setTimeout(()=>go('instant'),350);if(document.readyState!=='complete')window.addEventListener('load',()=>go('instant'),{once:true});}}
+    else window.scrollTo({top:0,behavior:'instant'});
+  }
+  window.addEventListener('hashchange',()=>show(location.hash,true));
+  show(location.hash,false);
+})();
 </script>
 </body>
 </html>
