@@ -219,6 +219,14 @@ footer li{margin:3px 0;break-inside:avoid}
 .bbva tr.pick td,.bbva tr.pick th{background:rgba(20,100,165,.09);background:color-mix(in srgb,#1464A5 9%,var(--paper))}
 .bbva .grid2{margin-top:18px}
 /* Checklist de equipaje */
+.ck-pend{background:var(--paper);border:2px solid var(--selva);border-radius:16px;padding:14px 18px;margin-bottom:14px}
+.ck-pend h3{font-size:1.15rem;margin-bottom:6px}
+.ck-pend h3 small{font:600 .85rem "Source Sans 3",system-ui,sans-serif;color:var(--muted)}
+.ck-pend ul{margin:0;padding-left:1.1rem}
+.ck-pend li{margin:6px 0}
+.ck-pend a{color:var(--ink);text-decoration:none}
+.ck-pend .tag{font-size:.72rem;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--warn);color:var(--warnink);border:1px solid var(--warnline)}
+.ck-more,.ck-done{margin:8px 0 0;color:var(--muted);font-size:.92rem}
 .jump{display:inline-flex;align-items:center;gap:8px;margin-top:18px;min-height:44px;padding:0 16px;border-radius:999px;background:var(--paper);border:1.5px solid var(--selva);color:var(--selva);font-weight:700;text-decoration:none}
 .ck-top{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--line);margin-bottom:14px}
 .ck-bar{height:10px;border-radius:999px;background:var(--soft);overflow:hidden;margin:6px 0 10px}
@@ -458,6 +466,7 @@ footer li{margin:3px 0;break-inside:avoid}
       </div>
     </div>
     <div class="ck-prio"><b>Prioridad de compra:</b> casaca de abrigo, ropa térmica, gorro y guantes, bloqueador y repelente. Empieza por Ripley u Oechsle (lo más caro e importante) y termina en Plaza Vea.</div>
+    <div class="ck-pend" id="ck-pend"></div>
     <div id="ck-list"></div>
   </section>
   <section>
@@ -487,8 +496,8 @@ const CK = [
  {t:'Ropa base', w:'Ripley / Oechsle', items:[
   ['5–6 polos','dry-fit o algodón ligero, que sequen rápido'],
   ['2 camisetas manga larga delgadas','sol en la sierra y mosquitos en Tarapoto'],
-  ['2 pantalones','uno trekking o jogger, y un jean o chino para salir'],
-  ['2 shorts','para Tarapoto'],
+  ['2 pantalones','✓ 2 jeans comprados; lleva también un jogger cómodo de casa para el Colca y el trekking (el jean pesa y tarda en secar)',0,1],
+  ['2 shorts','para Tarapoto · ✓ ya los tienes en casa',0,1],
   ['7 pares de ropa interior'],
   ['7 pares de medias','2–3 gruesas para el frío'],
   ['1 muda más elegante','para la cena de aniversario']]},
@@ -526,31 +535,39 @@ const CK = [
  {t:'Accesorios y botiquín', w:'Mochila y tomatodo en Ripley / Oechsle; power bank en tienda Xiaomi o Coolbox; bálsamo, crema y candado en Plaza Vea; medicinas en botica', items:[
   ['Mochila de día pequeña','para los tours'],
   ['Tomatodo reusable'],
-  ['Power bank Xiaomi 33W 20000 mAh con cable USB-C integrado','uno para los dos iPhone (~3 cargas); ~S/100–140, original en la tienda Xiaomi; alternativa Anker en Coolbox (USB-C PD de 20 W+); va en equipaje de mano, nunca en bodega'],
+  ['Power bank Xiaomi 33W 20000 mAh con cable USB-C integrado','uno para los dos iPhone (~3 cargas); ~S/100–140, original en la tienda Xiaomi; alternativa Anker en Coolbox (USB-C PD de 20 W+); va en equipaje de mano, nunca en bodega · ✓ comprado',0,1],
   ['Bálsamo labial con protección solar','el clima seco de altura cuartea los labios'],
   ['Crema hidratante'],
   ['Pastillas para el soroche','consultar en la botica'],
   ['Algo para malestar estomacal y mareo en bus'],
   ['Candado pequeño','para la maleta'],
-  ['Cargadores y cables USB-C de ambos iPhone','el cable del iPhone sirve para cargar el segundo celular desde el power bank']]}
+  ['Cargadores y cables USB-C de ambos iPhone','el cable del iPhone sirve para cargar el segundo celular desde el power bank'],
+  ['Maleta de cabina de 10 kg','✓ comprada · máx. 55 × 35 × 25 cm con ruedas',0,1]]}
 ];
 const KEY='ck-equipaje-v1';
 let st={}; try{st=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){st={}}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const list=document.getElementById('ck-list'); if(!list) return;
-list.innerHTML=CK.map((g,gi)=>'<div class="ck-group" data-g="'+gi+'"><h3>'+esc(g.t)+(g.s?' · '+esc(g.s):'')+'<small class="ck-gc"></small></h3><p class="ck-where">📍 '+esc(g.w)+'</p>'+(g.n?'<p class="ck-note">⚠ '+esc(g.n)+'</p>':'')+g.items.map((it,ii)=>{const id='ck'+gi+'_'+ii;return '<label class="ck-item"><input type="checkbox" data-id="'+id+'"'+(st[id]?' checked':'')+'><span>'+esc(it[0])+(it[1]?'<em>'+esc(it[1])+'</em>':'')+'</span>'+(it[2]?'<b class="tag">Prioridad</b>':'')+'</label>'}).join('')+'</div>').join('');
-const upd=()=>{const all=list.querySelectorAll('input');let d=0;all.forEach(i=>{if(i.checked)d++});
+list.innerHTML=CK.map((g,gi)=>'<div class="ck-group" data-g="'+gi+'"><h3>'+esc(g.t)+(g.s?' · '+esc(g.s):'')+'<small class="ck-gc"></small></h3><p class="ck-where">📍 '+esc(g.w)+'</p>'+(g.n?'<p class="ck-note">⚠ '+esc(g.n)+'</p>':'')+g.items.map((it,ii)=>{const id='ck'+gi+'_'+ii;return '<label class="ck-item"><input type="checkbox" data-id="'+id+'"'+(((id in st)?st[id]:it[3])?' checked':'')+'><span>'+esc(it[0])+(it[1]?'<em>'+esc(it[1])+'</em>':'')+'</span>'+(it[2]?'<b class="tag">Prioridad</b>':'')+'</label>'}).join('')+'</div>').join('');
+const pend=document.getElementById('ck-pend');
+const renderPend=()=>{const it=[];list.querySelectorAll('input').forEach(i=>{if(i.checked)return;const [g,k]=i.dataset.id.slice(2).split('_').map(Number);const x=CK[g].items[k];const polo=/polo|camiseta/i.test(x[0]);it.push({t:x[0],r:x[2]?0:(polo?1:2),id:i.dataset.id})});
+ it.sort((a,b)=>a.r-b.r);
+ if(!it.length){pend.innerHTML='<h3>Pendiente para mañana</h3><p class="ck-done">¡Todo listo! 🎉</p>';return}
+ const top=it.filter(x=>x.r<2),rest=it.length-top.length;
+ pend.innerHTML='<h3>Pendiente para mañana <small>(después del trabajo)</small></h3><ul>'+(top.length?top:it.slice(0,8)).map(x=>'<li><a href="#" data-go="'+x.id+'">'+(x.r===0?'<b class="tag">Prioridad</b> ':'')+esc(x.t)+'</a></li>').join('')+'</ul>'+(top.length&&rest?'<p class="ck-more">+ '+rest+' cosas más sin marcar en la lista de abajo</p>':'')};
+pend.addEventListener('click',e=>{const a=e.target.closest('a[data-go]');if(!a)return;e.preventDefault();const el=list.querySelector('input[data-id="'+a.dataset.go+'"]');if(el){el.closest('.ck-item').scrollIntoView({block:'center',behavior:'smooth'})}});
+const upd=()=>{renderPend();const all=list.querySelectorAll('input');let d=0;all.forEach(i=>{if(i.checked)d++});
  document.getElementById('ck-num').textContent=d+' de '+all.length+' listos';
  const p=Math.round(d*100/all.length);document.getElementById('ck-pct').textContent=p+'%';document.getElementById('ck-fill').style.width=p+'%';
  list.querySelectorAll('.ck-group').forEach(g=>{const ins=g.querySelectorAll('input');let c=0;ins.forEach(i=>{if(i.checked)c++});g.querySelector('.ck-gc').textContent=c+'/'+ins.length})};
-list.addEventListener('change',e=>{const i=e.target;if(i.dataset.id){if(i.checked)st[i.dataset.id]=1;else delete st[i.dataset.id];save();upd()}});
+list.addEventListener('change',e=>{const i=e.target;if(i.dataset.id){st[i.dataset.id]=i.checked?1:0;save();upd()}});
 const hb=document.getElementById('ck-hide');let hide=false;try{hide=localStorage.getItem(KEY+'-hide')==='1'}catch(e){}
 const setHide=v=>{hide=v;list.classList.toggle('ck-hide',v);hb.setAttribute('aria-pressed',v);hb.textContent=v?'Mostrar todo':'Ocultar lo marcado';try{localStorage.setItem(KEY+'-hide',v?'1':'0')}catch(e){}};
 hb.addEventListener('click',()=>setHide(!hide));setHide(hide);
 const rb=document.getElementById('ck-reset');let armed=null;
 rb.addEventListener('click',()=>{if(!armed){rb.textContent='¿Seguro? Toca otra vez';armed=setTimeout(()=>{armed=null;rb.textContent='Desmarcar todo'},3000);return}
- clearTimeout(armed);armed=null;rb.textContent='Desmarcar todo';st={};save();list.querySelectorAll('input').forEach(i=>i.checked=false);upd()});
+ clearTimeout(armed);armed=null;rb.textContent='Desmarcar todo';st={};list.querySelectorAll('input').forEach(i=>{i.checked=false;st[i.dataset.id]=0});save();upd()});
 upd();
 })();
 const GF =(a, b, d) => 'https://www.google.com/travel/flights?q=' + encodeURIComponent('Flights from ' + a + ' to ' + b + ' on ' + d + ' one way') + '&hl=es&curr=PEN';
