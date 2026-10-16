@@ -218,6 +218,30 @@ footer li{margin:3px 0;break-inside:avoid}
 .bbva td s{color:var(--muted)}
 .bbva tr.pick td,.bbva tr.pick th{background:rgba(20,100,165,.09);background:color-mix(in srgb,#1464A5 9%,var(--paper))}
 .bbva .grid2{margin-top:18px}
+/* Checklist de equipaje */
+.jump{display:inline-flex;align-items:center;gap:8px;margin-top:18px;min-height:44px;padding:0 16px;border-radius:999px;background:var(--paper);border:1.5px solid var(--selva);color:var(--selva);font-weight:700;text-decoration:none}
+.ck-top{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.ck-bar{height:10px;border-radius:999px;background:var(--soft);overflow:hidden;margin:6px 0 10px}
+.ck-bar i{display:block;height:100%;width:0;background:var(--selva);transition:width .25s}
+.ck-count{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:700}
+.ck-count small{color:var(--muted);font-weight:600}
+.ck-tools{display:flex;gap:8px;flex-wrap:wrap}
+.ck-tools button{min-height:40px;padding:0 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font:700 .92rem "Source Sans 3",system-ui,sans-serif;cursor:pointer}
+.ck-tools button[aria-pressed="true"]{border-color:var(--selva);color:var(--selva)}
+.ck-prio{background:var(--warn);border:1px solid var(--warnline);border-radius:16px;padding:14px 18px;margin-bottom:14px}
+.ck-prio b{color:var(--warnink)}
+.ck-group{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.ck-group h3{font-size:1.15rem;padding:14px 18px 2px;display:flex;justify-content:space-between;gap:10px}
+.ck-group h3 small{font:600 .85rem "Source Sans 3",system-ui,sans-serif;color:var(--muted);white-space:nowrap}
+.ck-where{margin:2px 18px 8px;color:var(--muted);font-size:.9rem}
+.ck-note{margin:0 18px 10px;font-size:.9rem;color:var(--warnink)}
+.ck-item{display:flex;gap:12px;align-items:flex-start;padding:11px 18px;border-top:1px solid var(--line);cursor:pointer;min-height:48px}
+.ck-item input{width:22px;height:22px;margin:2px 0 0;flex:none;accent-color:var(--selva)}
+.ck-item span{flex:1}
+.ck-item em{display:block;font-style:normal;font-size:.85rem;color:var(--muted)}
+.ck-item .tag{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--warn);color:var(--warnink);border:1px solid var(--warnline);white-space:nowrap;align-self:center}
+.ck-item:has(input:checked) span{text-decoration:line-through;color:var(--muted)}
+.ck-hide .ck-item:has(input:checked){display:none}
 @media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 @media (max-width:600px){.car-nav{width:38px;height:38px}}
 
@@ -246,6 +270,7 @@ footer li{margin:3px 0;break-inside:avoid}
       <button type="button" data-v="opt">Precio-calidad</button>
       <button type="button" data-v="pre">Premium</button></div></div>
   </div>
+  <a class="jump" href="#equipaje">🧳 Checklist de equipaje y compras</a>
   <section class="crono-sec" id="cronograma">
     <div class="crono-head"><h2>Cronograma</h2><p>Toca un día para ir a su detalle. Horas aproximadas salvo las reservadas.</p></div>
     <div class="stays"><div class="stay selva"><b>Tarapoto · Airbnb ✓</b><small>sáb 17 → jue 22 · 5 noches</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay aqp"><b>Arequipa · Airbnb</b><small>jue 22 → mar 27 · 5 noches</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay puno"><b>Puno · Airbnb</b><small>mar 27 → sáb 31 · 4 noches (recomendado sin cortar)</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay puno"><b>Lodge en los Uros</b><small>mié 28 → jue 29 · 1 noche</small><div class="hrs"><span>Check-in <b>12:00</b></span><span>Check-out <b>11:00</b></span></div></div></div>
@@ -421,6 +446,20 @@ footer li{margin:3px 0;break-inside:avoid}
         <li>Al lodge lleven solo una mochila: los botes son pequeños y las maletas se quedan en el Airbnb de Puno.</li></ul></div>
     </div>
   </section>
+  <section id="equipaje">
+    <h2>Checklist de equipaje y compras</h2>
+    <p class="sub">Tres climas: calor húmedo en Tarapoto, sol fuerte y noches frías en Arequipa, y frío de verdad en el Colca y Puno. La idea es vestirse en capas, llevar ropa para ~7 días y lavar una vez a mitad del viaje. Marca cada cosa al comprarla o empacarla; se guarda en este celular.</p>
+    <div class="ck-top">
+      <div class="ck-count"><span id="ck-num">0 de 0 listos</span><small id="ck-pct">0%</small></div>
+      <div class="ck-bar"><i id="ck-fill"></i></div>
+      <div class="ck-tools">
+        <button type="button" id="ck-hide" aria-pressed="false">Ocultar lo marcado</button>
+        <button type="button" id="ck-reset">Desmarcar todo</button>
+      </div>
+    </div>
+    <div class="ck-prio"><b>Prioridad de compra:</b> casaca de abrigo, ropa térmica, gorro y guantes, bloqueador y repelente. Empieza por Ripley u Oechsle (lo más caro e importante) y termina en Plaza Vea.</div>
+    <div id="ck-list"></div>
+  </section>
   <section>
     <h2>Consejos</h2>
     <div class="grid3">
@@ -442,7 +481,78 @@ footer li{margin:3px 0;break-inside:avoid}
   </footer>
 </main>
 <script>
-const GF = (a, b, d) => 'https://www.google.com/travel/flights?q=' + encodeURIComponent('Flights from ' + a + ' to ' + b + ' on ' + d + ' one way') + '&hl=es&curr=PEN';
+// Checklist de equipaje: [texto, detalle opcional, prioridad]
+(function(){
+const CK = [
+ {t:'Ropa base', w:'Ripley / Oechsle', items:[
+  ['5–6 polos','dry-fit o algodón ligero, que sequen rápido'],
+  ['2 camisetas manga larga delgadas','sol en la sierra y mosquitos en Tarapoto'],
+  ['2 pantalones','uno trekking o jogger, y un jean o chino para salir'],
+  ['2 shorts','para Tarapoto'],
+  ['7 pares de ropa interior'],
+  ['7 pares de medias','2–3 gruesas para el frío'],
+  ['1 muda más elegante','para la cena de aniversario']]},
+ {t:'Abrigo', w:'Ripley / Oechsle, sección deportiva u outdoor', s:'Arequipa, Colca y Puno', items:[
+  ['Casaca polar o fleece','abrigo medio',1],
+  ['Casaca exterior','cortavientos impermeable o de pluma ligera; encima del polar alcanza para Puno de noche',1],
+  ['Ropa térmica: polo y pantalón','para dormir en Puno y la salida de las 3 am al Colca',1],
+  ['Gorro de lana','',1],
+  ['Guantes','',1],
+  ['Buff o chalina']]},
+ {t:'Calzado', w:'Ripley / Oechsle (sandalias también en Plaza Vea)', items:[
+  ['Zapatillas cómodas de caminar o trekking ligero','ya usadas, no nuevas, para evitar ampollas'],
+  ['Sandalias','Tarapoto, ducha y aguas termales']]},
+ {t:'Sol y selva', w:'Plaza Vea (lentes y gorra en Ripley / Oechsle)', items:[
+  ['Bloqueador SPF 50+','imprescindible en la sierra',1],
+  ['Lentes de sol'],
+  ['Gorra o sombrero'],
+  ['Repelente con DEET','para Tarapoto',1],
+  ['Ropa de baño','cataratas y termales del Colca'],
+  ['Poncho de lluvia ligero','en Tarapoto llueve de golpe']]},
+ {t:'Aseo personal', w:'Plaza Vea (el estuche también en Ripley / Oechsle)', n:'Si va en equipaje de mano en los vuelos: líquidos en envases de máximo 100 ml.', items:[
+  ['Estuche o neceser organizador','de preferencia colgable y con compartimentos'],
+  ['Cepillo de dientes, pasta e hilo dental'],
+  ['Desodorante'],
+  ['Desodorante para pies'],
+  ['Champú y jabón','tamaño viaje'],
+  ['Gel para el cabello'],
+  ['Polvo para peinar'],
+  ['Peine o cepillo'],
+  ['Secadora de pelo','opcional, según espacio'],
+  ['Cortaúñas'],
+  ['Afeitadora'],
+  ['Pañitos húmedos y alcohol en gel'],
+  ['Papel higiénico de bolsillo']]},
+ {t:'Accesorios y botiquín', w:'Mochila, tomatodo y power bank en Ripley / Oechsle; bálsamo, crema y candado en Plaza Vea; medicinas en botica', items:[
+  ['Mochila de día pequeña','para los tours'],
+  ['Tomatodo reusable'],
+  ['Power bank y cargadores'],
+  ['Bálsamo labial con protección solar','el clima seco de altura cuartea los labios'],
+  ['Crema hidratante'],
+  ['Pastillas para el soroche','consultar en la botica'],
+  ['Algo para malestar estomacal y mareo en bus'],
+  ['Candado pequeño','para la maleta']]}
+];
+const KEY='ck-equipaje-v1';
+let st={}; try{st=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){st={}}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const list=document.getElementById('ck-list'); if(!list) return;
+list.innerHTML=CK.map((g,gi)=>'<div class="ck-group" data-g="'+gi+'"><h3>'+esc(g.t)+(g.s?' · '+esc(g.s):'')+'<small class="ck-gc"></small></h3><p class="ck-where">📍 '+esc(g.w)+'</p>'+(g.n?'<p class="ck-note">⚠ '+esc(g.n)+'</p>':'')+g.items.map((it,ii)=>{const id='ck'+gi+'_'+ii;return '<label class="ck-item"><input type="checkbox" data-id="'+id+'"'+(st[id]?' checked':'')+'><span>'+esc(it[0])+(it[1]?'<em>'+esc(it[1])+'</em>':'')+'</span>'+(it[2]?'<b class="tag">Prioridad</b>':'')+'</label>'}).join('')+'</div>').join('');
+const upd=()=>{const all=list.querySelectorAll('input');let d=0;all.forEach(i=>{if(i.checked)d++});
+ document.getElementById('ck-num').textContent=d+' de '+all.length+' listos';
+ const p=Math.round(d*100/all.length);document.getElementById('ck-pct').textContent=p+'%';document.getElementById('ck-fill').style.width=p+'%';
+ list.querySelectorAll('.ck-group').forEach(g=>{const ins=g.querySelectorAll('input');let c=0;ins.forEach(i=>{if(i.checked)c++});g.querySelector('.ck-gc').textContent=c+'/'+ins.length})};
+list.addEventListener('change',e=>{const i=e.target;if(i.dataset.id){if(i.checked)st[i.dataset.id]=1;else delete st[i.dataset.id];save();upd()}});
+const hb=document.getElementById('ck-hide');let hide=false;try{hide=localStorage.getItem(KEY+'-hide')==='1'}catch(e){}
+const setHide=v=>{hide=v;list.classList.toggle('ck-hide',v);hb.setAttribute('aria-pressed',v);hb.textContent=v?'Mostrar todo':'Ocultar lo marcado';try{localStorage.setItem(KEY+'-hide',v?'1':'0')}catch(e){}};
+hb.addEventListener('click',()=>setHide(!hide));setHide(hide);
+const rb=document.getElementById('ck-reset');let armed=null;
+rb.addEventListener('click',()=>{if(!armed){rb.textContent='¿Seguro? Toca otra vez';armed=setTimeout(()=>{armed=null;rb.textContent='Desmarcar todo'},3000);return}
+ clearTimeout(armed);armed=null;rb.textContent='Desmarcar todo';st={};save();list.querySelectorAll('input').forEach(i=>i.checked=false);upd()});
+upd();
+})();
+const GF =(a, b, d) => 'https://www.google.com/travel/flights?q=' + encodeURIComponent('Flights from ' + a + ' to ' + b + ' on ' + d + ' one way') + '&hl=es&curr=PEN';
 const money = n => 'S/' + n.toLocaleString('en-US');
 
 // Galerías por día: [URL de la imagen (Google Imágenes), lugar, sitio de origen]
