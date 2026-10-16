@@ -218,6 +218,14 @@ footer li{margin:3px 0;break-inside:avoid}
 .bbva td s{color:var(--muted)}
 .bbva tr.pick td,.bbva tr.pick th{background:rgba(20,100,165,.09);background:color-mix(in srgb,#1464A5 9%,var(--paper))}
 .bbva .grid2{margin-top:18px}
+/* Repartir maleta y mochila */
+.pack{margin-top:28px}
+.pack-title{font-size:clamp(1.4rem,4vw,1.8rem);margin-bottom:8px}
+.pack-card h3{font-size:1.15rem}
+.pack-card ul,.pack-tips ul{padding-left:1.1rem}
+.pack-card li,.pack-tips li{margin:7px 0;font-size:.98rem}
+.pack-sub{margin:0 0 6px;color:var(--muted);font-size:.92rem}
+.pack-tips{margin-top:14px}
 /* Checklist de equipaje */
 .ck-pend{background:var(--paper);border:2px solid var(--selva);border-radius:16px;padding:14px 18px;margin-bottom:14px}
 .ck-pend h3{font-size:1.15rem;margin-bottom:6px}
@@ -457,6 +465,7 @@ footer li{margin:3px 0;break-inside:avoid}
   <section id="equipaje">
     <h2>Checklist de equipaje y compras</h2>
     <p class="sub">Tres climas: calor húmedo en Tarapoto, sol fuerte y noches frías en Arequipa, y frío de verdad en el Colca y Puno. La idea es vestirse en capas, llevar ropa para ~7 días y lavar una vez a mitad del viaje. Marca cada cosa al comprarla o empacarla; se guarda en este celular.</p>
+    <div class="ck-wrap">
     <div class="ck-top">
       <div class="ck-count"><span id="ck-num">0 de 0 listos</span><small id="ck-pct">0%</small></div>
       <div class="ck-bar"><i id="ck-fill"></i></div>
@@ -465,9 +474,57 @@ footer li{margin:3px 0;break-inside:avoid}
         <button type="button" id="ck-reset">Desmarcar todo</button>
       </div>
     </div>
-    <div class="ck-prio"><b>Prioridad de compra:</b> casaca de abrigo, ropa térmica, gorro y guantes, bloqueador y repelente. Empieza por Ripley u Oechsle (lo más caro e importante) y termina en Plaza Vea.</div>
+    <div class="ck-prio"><b>Prioridad de compra:</b> casaca de abrigo, ropa térmica, gorro y guantes, bloqueador y repelente. Empieza por Ripley u Oechsle (lo más caro e importante) y termina en Plaza Vea. <a href="#repartir">Ver qué va en la maleta y qué en la mochila ↓</a></div>
     <div class="ck-pend" id="ck-pend"></div>
     <div id="ck-list"></div>
+    </div>
+    <div class="pack" id="repartir">
+      <h3 class="pack-title">Cómo repartir: maleta de 10 kg y mochila</h3>
+      <p class="sub" style="margin-bottom:14px">La regla: <b>la maleta guarda lo que no necesitas hasta llegar al alojamiento; la mochila, lo que necesitas durante el viaje o lo que no puedes perder.</b> En los buses (Arequipa → Puno) la maleta va en la bodega, así que nada de valor dentro.</p>
+      <div class="grid3">
+        <div class="card pack-card"><h3>🧳 Maleta de cabina (10 kg)</h3>
+          <p class="pack-sub">Va en el compartimento de arriba del avión y en la bodega del bus.</p>
+          <ul>
+            <li><b>Ropa enrollada</b> (no doblada): polos, camisetas manga larga, shorts, ropa interior y medias.</li>
+            <li><b>Segundo pantalón</b> (jean o jogger) y la muda elegante para la cena del aniversario, arriba de todo para que no se arrugue.</li>
+            <li><b>Ropa térmica</b>, ropa de baño y polo UV.</li>
+            <li><b>Sandalias</b> en una bolsa, al fondo junto a las ruedas.</li>
+            <li><b>Neceser de aseo</b>: cepillo, desodorantes, champú, gel, polvo para peinar, peine, afeitadora y cortaúñas.</li>
+            <li><b>Secadora</b>, solo si queda espacio (pesa ~0.5 kg).</li>
+            <li>Bloqueador y repelente de repuesto, cargadores extra.</li>
+          </ul>
+        </div>
+        <div class="card pack-card"><h3>🎒 Mochila (siempre contigo)</h3>
+          <p class="pack-sub">Va bajo el asiento y es tu mochila de día en los tours.</p>
+          <ul>
+            <li><b>Documentos</b>: DNI, tarjetas, efectivo (las entradas del Colca son solo en efectivo), pases de abordar.</li>
+            <li><b>Power bank y cables</b>: obligatorio en cabina, nunca en la maleta del bus.</li>
+            <li><b>Botiquín</b>: pastillas para el soroche, mareo y estómago.</li>
+            <li><b>Bolsa transparente de líquidos</b> (máx. 100 ml c/u), arriba, para sacarla rápido en el control.</li>
+            <li>Lentes de sol, gorra, bloqueador chico, bálsamo labial, alcohol en gel, pañitos y papel higiénico.</li>
+            <li>Gorro, guantes, buff y poncho de lluvia: ocupan poco y los usas al bajar del avión o del bus.</li>
+            <li>Tomatodo vacío (lo llenas después del control) y el candado de la maleta.</li>
+            <li><b>Muda de emergencia</b>: un polo y ropa interior, por si la maleta del bus se demora.</li>
+          </ul>
+        </div>
+        <div class="card pack-card"><h3>🧥 Llévalo puesto</h3>
+          <p class="pack-sub">Lo más pesado y voluminoso no ocupa la maleta si lo llevas encima en los días de viaje.</p>
+          <ul>
+            <li><b>Zapatillas</b> de caminar, las más pesadas.</li>
+            <li><b>Jean</b>: pesa ~0.7 kg y ocupa mucho doblado.</li>
+            <li><b>Casaca polar y casaca exterior</b>: en el avión hace frío, y si te da calor las amarras a la mochila.</li>
+          </ul>
+          <p class="pack-sub" style="margin-top:12px">Esto libera ~2 kg y casi un tercio del espacio de la maleta.</p>
+        </div>
+      </div>
+      <div class="card pack-tips"><h3>Para que todo entre</h3><ul>
+        <li><b>Enrolla la ropa</b> o usa bolsas organizadoras (packing cubes) o ziplocs: ocupa menos y se arruga menos.</li>
+        <li><b>Rellena los huecos</b>: medias dentro de las zapatillas o sandalias, cargadores y cables en un estuche pequeño o dentro del neceser.</li>
+        <li><b>Pésala en casa</b> con una balanza de baño (tú con la maleta menos tú solo) y deja <b>1–1.5 kg libres</b> para recuerdos de alpaca en Arequipa y Puno.</li>
+        <li><b>Lavas una vez</b> a mitad del viaje (Arequipa), así no necesitas más de ~7 mudas.</li>
+        <li>Lo que se compra mejor allá (gorro, guantes y chalina de alpaca) no lo cargues desde Lima.</li>
+      </ul></div>
+    </div>
   </section>
   <section>
     <h2>Consejos</h2>
