@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Selva, sillar y lago</title>
+<title>Selva y sillar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@ img{max-width:100%;display:block}
 .hero .credit a{color:#fff}
 
 /* Ruta */
-.route{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:var(--paper);border:1px solid var(--line);border-radius:18px;margin-top:-34px;position:relative;z-index:2;overflow:hidden}
+.route{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--paper);border:1px solid var(--line);border-radius:18px;margin-top:-34px;position:relative;z-index:2;overflow:hidden}
 .route div{padding:16px 18px;border-left:1px solid var(--line)}
 .route div:first-child{border-left:0}
 .route small{display:block;font-size:.85rem;font-weight:700}
@@ -173,7 +173,6 @@ footer li{margin:3px 0;break-inside:avoid}
   .route{grid-template-columns:repeat(2,minmax(0,1fr))}
   .route div:nth-child(odd){border-left:0}
   .route div:nth-child(n+3){border-top:1px solid var(--line)}
-  .route div:last-child{grid-column:1/-1}
   .mosaic,.mosaic.four{grid-template-columns:1fr 1fr;grid-template-rows:220px 150px 150px;height:auto}
   .mosaic figure:first-child{grid-column:span 2;grid-row:auto}
   .mosaic.four figure:nth-child(2){grid-column:auto}
@@ -344,7 +343,7 @@ body:not([data-view="inicio"]) .hero{display:none}
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#inicio"><b>Selva, sillar y lago</b><small>17–31 oct · Tarapoto · Arequipa · Puno</small></a>
+  <a class="brand" href="#inicio"><b>Selva y sillar</b><small>17–30 oct · Tarapoto · Arequipa</small></a>
   <nav class="tabs" aria-label="Secciones">
     <a href="#inicio" data-tab="inicio"><span aria-hidden="true">🗓️</span>Inicio</a>
     <a href="#dias" data-tab="dias"><span aria-hidden="true">📍</span>Días</a>
@@ -357,7 +356,7 @@ body:not([data-view="inicio"]) .hero{display:none}
 <header class="hero">
   <img id="hero-img" alt="Plaza de Armas de Arequipa con el volcán Misti al fondo">
   <div class="wrap">
-    <h1>Selva, sillar<br>y lago</h1>
+    <h1>Selva<br>y sillar</h1>
     <p id="lead"></p>
   </div>
   <span class="credit">Foto: <a href="https://live.staticflickr.com/4089/5096680025_c3a920e2ae_h.jpg" target="_blank" rel="noopener">Flickr</a></span>
@@ -367,45 +366,43 @@ body:not([data-view="inicio"]) .hero{display:none}
   <div class="route">
     <div><small style="color:var(--muted)">Salida · sáb 17</small><b>Lima</b></div>
     <div><small style="color:var(--selva)">Selva · 5 noches</small><b>Tarapoto</b></div>
-    <div><small style="color:var(--sillar)">Sillar · 5 noches</small><b>Arequipa y Colca</b></div>
-    <div><small style="color:var(--lago)">Altiplano · 4 noches</small><b>Puno y Titicaca</b></div>
-    <div><small style="color:var(--muted)">Regreso · sáb 31</small><b>Lima, vuelo desde Juliaca</b></div>
+    <div><small style="color:var(--sillar)">Sillar · 8 noches</small><b>Arequipa y Colca</b></div>
+    <div><small style="color:var(--muted)">Regreso · vie 30</small><b>Lima, vuelo desde Arequipa</b></div>
   </div>
   <section class="crono-sec" id="cronograma">
     <div class="crono-head"><h2>Cronograma</h2><p>Toca un día para ir a su detalle. Horas aproximadas salvo las reservadas.</p></div>
-    <div class="stays"><div class="stay selva"><b>Tarapoto · Airbnb ✓</b><small>sáb 17 → jue 22 · 5 noches</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay aqp"><b>Arequipa · Airbnb</b><small>jue 22 → mar 27 · 5 noches</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay puno"><b>Puno · Airbnb</b><small>mar 27 → sáb 31 · 4 noches (recomendado sin cortar)</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay puno"><b>Lodge en los Uros</b><small>mié 28 → jue 29 · 1 noche</small><div class="hrs"><span>Check-in <b>12:00</b></span><span>Check-out <b>11:00</b></span></div></div></div>
+    <div class="stays"><div class="stay selva"><b>Tarapoto · Airbnb ✓</b><small>sáb 17 → jue 22 · 5 noches</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay aqp"><b>Arequipa · Airbnb</b><small>jue 22 → vie 30 · 8 noches (extender sin cortar)</small><div class="hrs"><span>Check-in <b>15:00</b></span><span>Check-out <b>11:00</b></span></div></div><div class="stay aqp"><b>Colca · lodge del tour</b><small>sáb 24 → dom 25 · 1 noche, va con Giardino</small><div class="hrs"><span>Check-in <b>Con el tour</b></span><span>Check-out <b>Con el tour</b></span></div></div></div>
     <ol class="crono" id="crono"></ol>
     <p class="fine">El check-in de los Airbnb muchas veces se puede adelantar o se pueden dejar maletas antes: pregúntenle al anfitrión al reservar y revisen las reseñas, que suelen mencionarlo.</p>
   </section>
   <section class="twin">
     <div class="panel">
       <h3 style="font-size:1.3rem;margin-bottom:6px">Perfil de altitud</h3>
-      <svg viewBox="0 0 640 180" role="img" aria-label="Altitud: Tarapoto 350 m, Arequipa 2,335 m, mirador de Patapampa en el Colca 4,910 m, Puno 3,830 m">
+      <svg viewBox="0 0 640 180" role="img" aria-label="Altitud: Tarapoto 350 m, Arequipa 2,335 m, mirador de Patapampa en el Colca 4,910 m, Chivay 3,600 m, Laguna de Salinas 4,300 m">
         <line x1="20" y1="160" x2="620" y2="160" stroke="var(--line)"/>
-        <path d="M20 151 L190 151 C220 151 225 97 255 97 L330 97 C345 97 350 28 365 28 C380 28 385 97 400 97 L450 97 C480 97 485 57 515 57 L620 57" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M20 151 L190 151 C220 151 225 97 255 97 L330 97 C345 97 350 28 365 28 C380 28 385 63 400 63 L430 63 C445 63 450 97 465 97 L515 97 C527 97 532 44 545 44 C558 44 563 97 575 97 L620 97" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
         <rect x="20" y="143" width="170" height="10" rx="3" fill="var(--selva)"/>
-        <rect x="255" y="89" width="195" height="10" rx="3" fill="var(--sillar)"/>
-        <rect x="515" y="49" width="105" height="10" rx="3" fill="var(--lago)"/>
+        <rect x="255" y="89" width="365" height="10" rx="3" fill="var(--sillar)"/>
         <g font-family="Bricolage Grotesque, system-ui, sans-serif" font-size="14" font-weight="700" fill="var(--ink)">
-          <text x="24" y="135">Tarapoto</text><text x="259" y="81">Arequipa</text><text x="300" y="20">Patapampa</text><text x="519" y="41">Puno</text>
+          <text x="24" y="135">Tarapoto</text><text x="259" y="81">Arequipa</text><text x="300" y="20">Patapampa</text><text x="404" y="55">Chivay</text><text x="512" y="36">Salinas</text>
         </g>
         <g font-family="Source Sans 3, system-ui, sans-serif" font-size="12" font-weight="400" fill="var(--muted)">
-          <text x="92" y="135">350 m</text><text x="259" y="118">2,335 m</text><text x="380" y="20">4,910 m</text><text x="558" y="41">3,830 m</text>
+          <text x="92" y="135">350 m</text><text x="259" y="118">2,335 m</text><text x="380" y="20">4,910 m</text><text x="404" y="80">3,600 m</text><text x="566" y="36">4,300 m</text>
         </g>
       </svg>
-      <div class="legend"><span>17–22 · San Martín</span><span>22–27 · Arequipa</span><span>27–31 · Puno</span></div>
+      <div class="legend"><span>17–22 · San Martín</span><span>22–30 · Arequipa y Colca</span></div>
     </div>
     <div class="note">
       <h3>Antes de salir</h3>
       <p>Viernes 16: salen del trabajo a las 6 pm y quedan libres a las 9 pm en Villa El Salvador. El último vuelo a Tarapoto de ese día sale 19:20, así que el viaje empieza el sábado 17 por la mañana.</p>
-      <p>Sábado 31: vuelo de Juliaca a Lima. Tienen el domingo para descansar antes de volver al trabajo el lunes.</p>
-      <p>Puno está a 3,830 m. Llegan después del Colca y de 5 días en Arequipa, así que el cuerpo ya estará aclimatado; igual, el primer día vayan con calma.</p>
+      <p>Viernes 30: vuelo de Arequipa a Lima. Tienen el fin de semana para descansar antes de volver al trabajo el lunes.</p>
+      <p>Puno quedó fuera por los incendios forestales cerca de los Uros; esos días se suman a Arequipa.</p>
     </div>
   </section>
   </div>
   <div class="view" data-view="dias" id="v-dias" aria-label="Día a día">
   <nav class="subnav" aria-label="Regiones">
-    <a href="#r-selva">🌿 Tarapoto</a><a href="#r-aqp">🏛️ Arequipa y Colca</a><a href="#r-puno">🚣 Puno</a><a href="#domingos">Tours en domingo</a>
+    <a href="#r-selva">🌿 Tarapoto</a><a href="#r-aqp">🏛️ Arequipa y Colca</a><a href="#domingos">Tours en domingo</a>
   </nav>
   <section id="dias-sec">
     <h2>Día a día</h2>
@@ -416,13 +413,8 @@ body:not([data-view="inicio"]) .hero{display:none}
     </div>
     <div class="region aqp" id="r-aqp">
       <div class="region-head"><span class="pill">Sillar</span><h3>Arequipa y Cañón del Colca</h3></div>
-      <p class="clim">Seco y soleado, noches frías. El Colca va en el tercer día para que el cuerpo se acostumbre primero a los 2,335 m de Arequipa. Abrigo para la madrugada y para Patapampa (4,910 m).</p>
+      <p class="clim">Seco y soleado, noches frías. El Colca va el sábado, después de dos días en los 2,335 m de Arequipa, y la Laguna de Salinas (4,300 m) va después del Colca, cuando ya estén aclimatados. Lleven abrigo para el Colca y para Salinas.</p>
       <ol class="days" id="days-aqp"></ol>
-    </div>
-    <div class="region puno" id="r-puno">
-      <div class="region-head"><span class="pill">Lago</span><h3>Puno y lago Titicaca</h3></div>
-      <p class="clim">Frío y seco: de día 14–16 °C con sol fuerte, de noche cerca de 0 °C. Casaca, gorro, bloqueador y lentes de sol. Tomen mate de coca y coman ligero el primer día.</p>
-      <ol class="days" id="days-puno"></ol>
     </div>
   </section>
   <section id="domingos">
@@ -433,25 +425,23 @@ body:not([data-view="inicio"]) .hero{display:none}
         <li>Varias exigen reservar con 48 h de anticipación: cierren el tour del domingo antes de viajar, no al llegar el sábado.</li>
         <li>Los fines de semana va más gente local a la laguna. Por eso el domingo va Laguna Azul (tour largo que igual se disfruta con gente) y los lugares más chicos quedan para días de semana.</li></ul></div>
       <div class="card"><h3>Arequipa · domingo 25</h3><ul>
-        <li>El domingo 25 va la Ruta del Sillar. Las agencias la venden todos los días, pero confirmen la salida dominical al reservar.</li>
-        <li>El Colca full day del sábado 24 también sale a diario.</li>
-        <li>El Museo Santuarios Andinos (Juanita) tiene horario reducido o cierra los domingos según la fuente, y lunes también varía. Por eso va el viernes 23.</li>
-        <li>El Monasterio de Santa Catalina abre todos los días.</li></ul></div>
+        <li>El domingo 25 es el segundo día del Colca, que sale todos los días en grupo.</li>
+        <li>La oficina de Giardino cierra los domingos y el sábado atiende solo hasta las 12:00: dejen todo reservado el viernes.</li>
+        <li>La Nueva Palomino abre los domingos temprano para el adobo, pero ese día estarán en el Colca. La ruta picantera va el martes 27 (cierra los miércoles).</li></ul></div>
     </div>
   </section>
   </div>
   <div class="view" data-view="clima" id="v-clima" aria-label="Clima">
   <nav class="subnav" aria-label="Destinos">
-    <a href="#cl-tarapoto">Tarapoto</a><a href="#cl-arequipa">Arequipa</a><a href="#cl-colca">Colca</a><a href="#cl-puno">Puno</a>
+    <a href="#cl-tarapoto">Tarapoto</a><a href="#cl-arequipa">Arequipa</a><a href="#cl-colca">Colca</a>
   </nav>
   <section id="clima-sec" class="clima">
     <h2>Clima en cada destino</h2>
-    <p class="sub">Del calor húmedo de la selva al frío del altiplano en dos semanas. Abajo, el rango de temperatura de cada lugar en la misma escala, qué esperar y cómo vestirse.</p>
+    <p class="sub">Del calor húmedo de la selva al frío del Colca en dos semanas. Abajo, el rango de temperatura de cada lugar en la misma escala, qué esperar y cómo vestirse.</p>
         <div class="cl-bars">
       <a class="cl-bar selva" href="#cl-tarapoto"><b>Tarapoto</b><span class="trk"><i style="--a:22;--b:34"></i></span><em>22–34 °C</em></a>
       <a class="cl-bar aqp" href="#cl-arequipa"><b>Arequipa</b><span class="trk"><i style="--a:10;--b:25"></i></span><em>10–25 °C</em></a>
       <a class="cl-bar cusco" href="#cl-colca"><b>Colca</b><span class="trk"><i style="--a:-3;--b:21"></i></span><em>−3–21 °C</em></a>
-      <a class="cl-bar puno" href="#cl-puno"><b>Puno</b><span class="trk"><i style="--a:2;--b:16"></i></span><em>2–16 °C</em></a>
       <div class="cl-axis" aria-hidden="true"><span style="--v:0">0°</span><span style="--v:10">10°</span><span style="--v:20">20°</span><span style="--v:30">30°</span></div>
     </div>
 
@@ -465,7 +455,7 @@ body:not([data-view="inicio"]) .hero{display:none}
     </article>
 
     <article class="cl-card aqp" id="cl-arequipa">
-      <header><span class="pill">Sillar · 2,335 m</span><h3>Arequipa</h3><small>jue 22 → lun 26</small></header>
+      <header><span class="pill">Sillar · 2,335 m</span><h3>Arequipa</h3><small>jue 22 → vie 30</small></header>
       <div class="cl-stats"><div><b>~23–26 °C</b><small>de día</small></div><div><b>~10–16 °C</b><small>de noche</small></div><div><b>Casi nunca</b><small>llueve en octubre</small></div><div><b>Muy fuerte</b><small>sol de altura</small></div></div>
       <p>Seco y despejado, el mejor clima del viaje. De día se camina en polo; al caer el sol baja rápido la temperatura y en la noche se siente fresco.</p>
       <div class="cl-fc" aria-label="Pronóstico"><span><b>22</b>26°/16° ☀️</span><span><b>23</b>26°/17° ☀️</span><span><b>24</b>25°/18° ☀️</span><span><b>25</b>22°/12° ⛅</span><span><b>26</b>20°/12° ⛅</span></div>
@@ -474,20 +464,12 @@ body:not([data-view="inicio"]) .hero{display:none}
     </article>
 
     <article class="cl-card cusco" id="cl-colca">
-      <header><span class="pill">Altura · hasta 4,910 m</span><h3>Cañón del Colca</h3><small>sáb 24 · sale ~3 am</small></header>
+      <header><span class="pill">Altura · hasta 4,910 m</span><h3>Cañón del Colca</h3><small>sáb 24 → dom 25 · noche en el valle</small></header>
       <div class="cl-stats"><div><b>~21 °C</b><small>de día en Chivay</small></div><div><b>~2 °C</b><small>madrugada en Chivay</small></div><div><b>Bajo 0 °C</b><small>al amanecer en Patapampa</small></div><div><b>Viento</b><small>en los miradores</small></div></div>
       <p>La parte más fría de todo el viaje: salen de madrugada, cruzan Patapampa (4,910 m) con helada y viento, y de día en el cañón hace sol y calor. Hay que vestirse en capas e ir sacándose ropa.</p>
       <p class="cl-wear"><b>Ponte:</b> térmica (polo y pantalón), casaca polar + casaca exterior, gorro, guantes y buff. Ropa de baño para las termales y bloqueador para el mediodía.</p>
     </article>
 
-    <article class="cl-card puno" id="cl-puno">
-      <header><span class="pill">Altiplano · 3,830 m</span><h3>Puno y Titicaca</h3><small>lun 26 → sáb 31</small></header>
-      <div class="cl-stats"><div><b>~14–16 °C</b><small>de día</small></div><div><b>~2–5 °C</b><small>de noche (puede tocar 0 °C)</small></div><div><b>Poca</b><small>alguna lluvia ligera</small></div><div><b>Viento</b><small>desde fines de octubre</small></div></div>
-      <p>Frío seco con sol muy fuerte: al sol se está bien, a la sombra y de noche hace frío de verdad. En el lago y en la noche en los Uros el viento lo hace sentir más frío. Los alojamientos rara vez tienen calefacción.</p>
-      <div class="cl-fc" aria-label="Pronóstico"><span><b>26</b>10°/3° 🌦</span><span><b>27</b>14°/5° ⛅</span><span><b>28</b>16°/7° ⛅</span><span><b>29</b>16°/7° ⛅</span><span><b>30</b>16°/6° ⛅</span></div>
-      <p class="cl-wear"><b>Ponte:</b> capas todo el día (polo + polar + casaca), gorro y guantes en la noche y en el bote, térmica para dormir. Bloqueador, bálsamo labial y lentes aunque haga frío.</p>
-      <a class="cl-link" href="https://www.tutiempo.net/puno.html" target="_blank" rel="noopener">Ver pronóstico actualizado ↗</a>
-    </article>
     <p class="fine">Promedios de octubre de Weather Spark, Adonde y Cuando y Wikipedia (Chivay); pronóstico día a día de tutiempo.net visto el 16 de octubre. Más allá de 5–7 días el pronóstico cambia bastante: revísenlo el día anterior.</p>
   </section>
   </div>
@@ -500,13 +482,11 @@ body:not([data-view="inicio"]) .hero{display:none}
     <p class="sub" style="color:var(--muted);margin:6px 0 0">Costos para los dos, en soles. Lo marcado con ✓ ya está pagado; lo demás es aproximado.</p>
     <h3>Tarapoto · sáb 17 al jue 22 (5 noches)</h3>
     <div class="scroll"><table><thead><tr><th>Concepto</th><th>Detalle</th><th style="text-align:right">Pareja</th></tr></thead><tbody><tr><th>Vuelo ✓</th><td>Reservado · JetSMART JA7256, 10:40–12:06</td><td class="num">S/720</td></tr><tr><th>Hospedaje ✓</th><td>Reservado · Airbnb, 5 noches (check-in 15:00, check-out 11:00)</td><td class="num">S/515</td></tr><tr><th>Tours</th><td>Laguna Azul, Ahuashiyacu + Lamas, Alto Mayo y Chazuta</td><td class="num">~S/830</td></tr><tr><th>Comida</th><td>Aproximado, ~S/100 por persona al día</td><td class="num">~S/1,000</td></tr><tr><th>Transporte local</th><td>Taxis y mototaxis</td><td class="num">~S/100</td></tr><tr class="sum"><th>Subtotal Tarapoto</th><td></td><td class="num">~S/3,165</td></tr></tbody></table></div>
-    <h3>Arequipa y Colca · jue 22 al mar 27 (5 noches)</h3>
-    <div class="scroll"><table><thead><tr><th>Concepto</th><th>Detalle</th><th style="text-align:right">Pareja</th></tr></thead><tbody><tr><th>Vuelo ✓</th><td>Reservado · JetSMART JA7261 + JA7005, 11:02–15:49 (escala en Lima)</td><td class="num">S/804</td></tr><tr><th>Hospedaje</th><td>Airbnb, 5 noches (check-in 15:00, check-out 11:00). Precio por confirmar</td><td class="num">~S/600–900</td></tr><tr><th>Tours</th><td>Colca full day con boleto, Santa Catalina, Juanita, Ruta del Sillar y bus a Mollendo</td><td class="num">~S/550</td></tr><tr><th>Comida</th><td>Aproximado, ~S/100 por persona al día</td><td class="num">~S/1,000</td></tr><tr><th>Cena de aniversario</th><td>Jueves 22 en la noche</td><td class="num">~S/250–350</td></tr><tr><th>Transporte local</th><td>Taxis, aeropuerto y terminal</td><td class="num">~S/150</td></tr><tr class="sum"><th>Subtotal Arequipa y Colca</th><td></td><td class="num">~S/3,350–3,750</td></tr></tbody></table></div>
-    <h3>Puno y Titicaca · mar 27 al sáb 31 (4 noches)</h3>
-    <div class="scroll"><table><thead><tr><th>Concepto</th><th>Detalle</th><th style="text-align:right">Pareja</th></tr></thead><tbody><tr><th>Bus</th><td>Arequipa → Puno, mar 27 08:00–14:00 (Turismo Zolorzano, S/29–40 c/u en RedBus)</td><td class="num">~S/60–80</td></tr><tr><th>Hospedaje</th><td>Airbnb en Puno, 4 noches seguidas para dejar las maletas. Precio por confirmar</td><td class="num">~S/600–800</td></tr><tr><th>Lodge en los Uros</th><td>1 noche (mié 28), suele incluir bote, cena y desayuno. Precio por confirmar</td><td class="num">~S/350–600</td></tr><tr><th>Tours</th><td>Sillustani y Taquile</td><td class="num">~S/300</td></tr><tr><th>Comida</th><td>Aproximado, ~S/100 por persona al día</td><td class="num">~S/800</td></tr><tr><th>Vuelo</th><td>Juliaca → Lima, sábado 31 (precio estimado, falta cotizar)</td><td class="num">~S/500–700</td></tr><tr><th>Traslado</th><td>Puno → aeropuerto de Juliaca, ~1 h</td><td class="num">~S/80</td></tr><tr class="sum"><th>Subtotal Puno</th><td></td><td class="num">~S/2,700–3,350</td></tr></tbody></table></div>
+    <h3>Arequipa y Colca · jue 22 al vie 30 (8 noches)</h3>
+    <div class="scroll"><table><thead><tr><th>Concepto</th><th>Detalle</th><th style="text-align:right">Pareja</th></tr></thead><tbody><tr><th>Vuelo ✓</th><td>Reservado · JetSMART JA7261 + JA7005, 11:02–15:49 (escala en Lima)</td><td class="num">S/804</td></tr><tr><th>Hospedaje</th><td>Airbnb del 22 al 30, 8 noches seguidas para dejar las maletas mientras van al Colca. Precio por confirmar</td><td class="num">~S/950–1,450</td></tr><tr><th>Tours Giardino</th><td>Colca Plus 2 días (con lodge, 2 almuerzos y 1 cena), Ruta del Sillar, Campiña, Laguna de Salinas y tour al atardecer. Por cotizar</td><td class="num">~S/1,500–2,300</td></tr><tr><th>Entradas</th><td>Museo Santuarios Andinos, Santa Catalina y boleto del Colca</td><td class="num">~S/120</td></tr><tr><th>Comida</th><td>Aproximado, ~S/100 por persona al día</td><td class="num">~S/1,600</td></tr><tr><th>Cena de aniversario</th><td>Jueves 22</td><td class="num">~S/250–350</td></tr><tr><th>Transporte local</th><td>Taxis y aeropuerto</td><td class="num">~S/200</td></tr><tr><th>Vuelo</th><td>Arequipa → Lima, viernes 30 (precio de referencia; pueden usar los puntos BBVA)</td><td class="num">~S/420–700</td></tr><tr class="sum"><th>Subtotal Arequipa y Colca</th><td></td><td class="num">~S/5,850–7,500</td></tr></tbody></table></div>
     <div class="tot">
-      <div><small>Total del viaje (pareja)</small><strong>S/9,200–10,300</strong><small>≈ S/4,600–5,150 por persona</small></div>
-      <div><small>Ahorro con puntos BBVA</small><strong>~S/35–100</strong><small>En un vuelo pendiente</small></div>
+      <div><small>Total del viaje (pareja)</small><strong>S/9,000–10,700</strong><small>≈ S/4,500–5,350 por persona</small></div>
+      <div><small>Ahorro con puntos BBVA</small><strong>~S/100</strong><small>En el vuelo Arequipa → Lima</small></div>
       <div><small>No incluido</small><strong style="font-size:1.1rem;margin-top:6px">Maleta de mano en low cost e IGV de hoteles</strong><small>Revisen ambos al pagar</small></div>
     </div>
     <div class="anniv">
@@ -517,25 +497,25 @@ body:not([data-view="inicio"]) .hero{display:none}
       <div class="card"><h3 style="margin-top:0">Decidido</h3><ul>
         <li>Vuelo Lima → Tarapoto reservado: JetSMART JA7256, sáb 17, 10:40–12:06 (S/720.02 los dos).</li>
         <li>Hospedaje en Tarapoto reservado: Airbnb del 17 al 22 (S/515).</li>
-        <li>Vuelo Tarapoto → Arequipa reservado: JetSMART JA7261 + JA7005, jue 22, 11:02–15:49 con escala en Lima (reserva W94ZHM).</li>
+        <li>Vuelo Tarapoto → Arequipa reservado: JetSMART JA7261 + JA7005, jue 22, 11:02–15:49 con escala en Lima.</li>
         <li>Aniversario en Arequipa: atardecer y cena especial.</li>
-        <li>Arequipa del 22 al 27 en Airbnb; Colca en un día y Ruta del Sillar.</li>
-        <li>Puno del 27 al 31 en Airbnb, con una noche romántica en un lodge de los Uros (28) y regreso en avión desde Juliaca el sábado 31.</li></ul></div>
+        <li>Arequipa del 22 al 30 en Airbnb, con 5 tours de Giardino Tours: Colca de 2 días, Ruta del Sillar, Campiña, Laguna de Salinas y tour al atardecer.</li>
+        <li>Puno quedó fuera por los incendios forestales en la zona de los Uros.</li>
+        <li>Regreso a Lima el viernes 30, en avión desde Arequipa.</li></ul></div>
       <div class="card"><h3 style="margin-top:0">Pendiente</h3><ul>
-        <li>Sábado 17: llegan a Tarapoto 12:06 y el check-in del Airbnb es desde las 15:00. Pregúntenle al anfitrión si pueden dejar maletas o entrar antes; si no, almuercen primero.</li>
-        <li>Comprar el vuelo Juliaca → Lima (31).</li>
-        <li>Elegir los Airbnb de Arequipa y Puno, el lodge de los Uros y el bus a Puno del 27.</li>
-        <li>Usar los puntos BBVA en un vuelo pendiente: comparen Juliaca → Lima en BBVA Viajes con el precio directo.</li>
-        <li>Reservar el tour del Colca full day del sábado 24 (sale ~3 am).</li></ul></div>
+        <li>Hoy antes de las 18:00: cotizar y reservar en Giardino (Jerusalén 604-A, WhatsApp +51 959 561 572) los 5 tours como paquete para 2. El sábado atienden hasta las 12:00 y el domingo cierran.</li>
+        <li>Extender el Airbnb de Arequipa hasta el viernes 30 (check-out 11:00).</li>
+        <li>Comprar el vuelo Arequipa → Lima del viernes 30; comparen en BBVA Viajes con los puntos.</li>
+        <li>Cancelar lo que hayan reservado en Puno (Airbnb, lodge) y revisar las condiciones de reembolso.</li></ul></div>
     </div>
   </section>
   <section id="vuelos">
     <div class="flhead">
-      <div><h2>Vuelos</h2><p class="sub">Del sábado 17 al sábado 31 de octubre de 2026 (15 días, 14 noches)</p></div>
+      <div><h2>Vuelos</h2><p class="sub">Del sábado 17 al viernes 30 de octubre de 2026 (14 días, 13 noches)</p></div>
       <div class="fltotal"><small>Total vuelos por persona</small><strong id="fl-total"></strong></div>
     </div>
     <div class="flights" id="flights"></div>
-    <p class="fine">Los vuelos Lima → Tarapoto y Tarapoto → Arequipa ya están comprados, ambos con JetSMART. El Juliaca → Lima son precios por persona en económica, sin equipaje facturado, vistos en Google Flights el 27 de setiembre de 2026. JetSMART y Sky cobran aparte la maleta de mano de 10 kg; LATAM la incluye en casi todas sus tarifas. No hay vuelo directo Tarapoto–Arequipa: todos conectan en Lima con un solo boleto.</p>
+    <p class="fine">Los vuelos Lima → Tarapoto y Tarapoto → Arequipa ya están comprados, ambos con JetSMART. El Arequipa → Lima es un precio de referencia por persona en económica, sin equipaje facturado, vistos en Google Flights el 27 de setiembre de 2026. JetSMART y Sky cobran aparte la maleta de mano de 10 kg; LATAM la incluye en casi todas sus tarifas. No hay vuelo directo Tarapoto–Arequipa: todos conectan en Lima con un solo boleto.</p>
   </section>
   <section id="precios">
     <h2>Precios clave</h2>
@@ -546,13 +526,13 @@ body:not([data-view="inicio"]) .hero{display:none}
         <li>Juane ~S/32, tacacho con cecina ~S/30 en restaurante; menú S/15–25.</li></ul></div>
       <div class="card"><h3>Arequipa y Colca (solo efectivo en entradas)</h3><ul>
         <li>Boleto del Colca: S/20 peruanos, se paga en el camino.</li>
-        <li>Tour Colca full day compartido: ~S/90–130 por persona; baños termales ~S/15 aparte.</li>
+        <li>Colca Plus 2 días con Giardino: por cotizar. Pregunten si incluye la entrada (S/20 peruanos), porque en su tour de 3 días no va incluida.</li>
         <li>Museo Santuarios Andinos (Juanita): S/20.</li>
         <li>Ruta del Sillar: ~S/40–60 por persona.</li></ul></div>
-      <div class="card"><h3>Puno y Titicaca</h3><ul>
-        <li>Bus Arequipa → Puno (RedBus, 27 oct): de día Turismo Zolorzano 08:00–14:00 o 09:15–14:00 (S/29–40, reseñas bajas) y Transzela 05:00–11:00 (S/40–60). Los mejor calificados son nocturnos: Turismo Mer 22:30 (4.2/5) y Huayruro 22:35 (4.8/5), pero llegan a las 5 am. Cruz del Sur no aparece en RedBus: revisen su web.</li>
-        <li>Lodge en los Uros: check-in 12:00, check-out 11:00; muchos solo aceptan efectivo. Taquile full day ~S/90–120 por persona · Sillustani ~S/40–60.</li>
-        <li>Al lodge lleven solo una mochila: los botes son pequeños y las maletas se quedan en el Airbnb de Puno.</li></ul></div>
+      <div class="card"><h3>Giardino Tours</h3><ul>
+        <li>Oficina en Calle Jerusalén 604-A, a unas 5 cuadras de la Plaza de Armas. Lun–vie 7:00–18:00, sáb 7:00–12:00, domingo cerrado. WhatsApp +51 959 561 572.</li>
+        <li>4.9 en Google con 120 reseñas; destacan el Colca de 2 días, los guías y choferes prudentes.</li>
+        <li>No publican precios: pidan cotización del paquete y confirmen qué tours son en grupo y cuáles privados.</li></ul></div>
     </div>
   </section>
   <div class="controls one">
@@ -605,7 +585,7 @@ body:not([data-view="inicio"]) .hero{display:none}
     <div class="scroll"><table><thead><tr><th>Hotel</th><th>Puntuación</th><th>Zona</th><th>Incluye</th><th>Precio normal</th><th>Con puntos</th></tr></thead><tbody><tr><th>Las Mercedes Hostal Residencial</th><td>8.7 (85)</td><td>Vallecito, 600 m</td><td>Desayuno · cancelación gratis</td><td><s>US$258</s></td><td class="pts">US$147</td></tr><tr><th>Hotel La Casona del Olivo</th><td>9.0 (10)</td><td>Yanahuara, 1.3 km</td><td>Desayuno</td><td><s>US$438</s></td><td class="pts">US$289</td></tr><tr><th>Hotel Tikary</th><td>8.6 (147)</td><td>Cerca de la Plaza de Armas</td><td>Desayuno buffet · cancelación gratis</td><td>—</td><td class="pts">US$335</td></tr><tr class="pick"><th>Tierra Viva Arequipa Plaza ★</th><td>9.4 (513)</td><td>Centro histórico, 300 m</td><td>Desayuno</td><td><s>US$726</s></td><td class="pts">US$411</td></tr><tr class="pick"><th>Hotel Boutique Villa Elisa ★</th><td>9.8 (153)</td><td>Selva Alegre, 1.4 km</td><td>Desayuno · cancelación gratis</td><td><s>US$666</s></td><td class="pts">US$487</td></tr><tr><th>qp Hotels Arequipa</th><td>8.8 (443)</td><td>Cerca de la Plaza de Armas</td><td>Desayuno buffet · algunas con cancelación gratis</td><td><s>US$688</s></td><td class="pts">US$511</td></tr></tbody></table></div>
     <p class="fine">★ Recomendados por puntuación, cantidad de reseñas y ubicación.</p>
     <div class="grid2">
-      <div class="card"><h3 style="margin-top:0">Dónde usarlos</h3><p style="margin:0">Como los hospedajes ahora son Airbnb, los puntos van a un vuelo pendiente. Comparen el Juliaca → Lima del 31 en BBVA Viajes contra el precio directo de la aerolínea; en el Tarapoto → Arequipa del 22 el ahorro real era de solo ~S/35, porque BBVA cobraba más caro el vuelo.</p></div>
+      <div class="card"><h3 style="margin-top:0">Dónde usarlos</h3><p style="margin:0">En el vuelo Arequipa → Lima del viernes 30. Comparen en BBVA Viajes con el precio directo de la aerolínea: en vuelos los puntos valen unos S/200, pero BBVA a veces cobra más caro el pasaje, así que el ahorro real suele quedar en ~S/35–100.</p></div>
       <div class="card"><h3 style="margin-top:0">Abrir la búsqueda</h3><p style="margin:0 0 10px">Los enlaces abren BBVA Viajes con las fechas ya cargadas; hay que tener la sesión de Maricielo iniciada.</p>
         <div class="links">
           <a class="btn ghost" href="https://bbva.viajes.despegar.com.pe/accommodations/results/CIT_7501/2026-10-17/2026-10-22/2" target="_blank" rel="noopener">Hoteles en Tarapoto ↗</a>
@@ -618,7 +598,7 @@ body:not([data-view="inicio"]) .hero{display:none}
   <div class="view" data-view="equipaje" id="v-equipaje" aria-label="Equipaje">
   <section id="equipaje">
     <h2>Checklist de equipaje y compras</h2>
-    <p class="sub">Tres climas: calor húmedo en Tarapoto, sol fuerte y noches frías en Arequipa, y frío de verdad en el Colca y Puno. La idea es vestirse en capas, llevar ropa para ~7 días y lavar una vez a mitad del viaje. Marca cada cosa al comprarla o empacarla; se guarda en este celular.</p>
+    <p class="sub">Tres climas: calor húmedo en Tarapoto, sol fuerte y noches frías en Arequipa, y frío de verdad en el Colca y Salinas. La idea es vestirse en capas, llevar ropa para ~7 días y lavar una vez a mitad del viaje. Marca cada cosa al comprarla o empacarla; se guarda en este celular.</p>
     <div class="ck-wrap">
     <div class="ck-top">
       <div class="ck-count"><span id="ck-num">0 de 0 listos</span><small id="ck-pct">0%</small></div>
@@ -634,7 +614,7 @@ body:not([data-view="inicio"]) .hero{display:none}
     </div>
     <div class="pack" id="repartir">
       <h3 class="pack-title">Cómo repartir: maleta de 10 kg y mochila</h3>
-      <p class="sub" style="margin-bottom:12px">El límite de 10 kg solo importa en los <b>vuelos</b> (Lima → Tarapoto, Tarapoto → Arequipa y Juliaca → Lima). En el bus a Puno la maleta va en la bodega y casi no se pesa, pero ahí <b>nada de valor dentro</b>. Con <b>3 pares de zapatillas</b> el calzado es lo que más pesa y ocupa, así que el plan se arma a partir de ellos.</p>
+      <p class="sub" style="margin-bottom:12px">El límite de 10 kg solo importa en los <b>vuelos</b> (Lima → Tarapoto, Tarapoto → Arequipa y Arequipa → Lima). Al Colca van solo con la mochila: la maleta se queda en el Airbnb. Con <b>3 pares de zapatillas</b> el calzado es lo que más pesa y ocupa, así que el plan se arma a partir de ellos.</p>
 
       <div class="card pack-tips" style="margin-top:0"><h3>👟 Los 3 pares (+ sandalias)</h3><ul>
         <li><b>Par 1, puesto:</b> el más pesado o voluminoso (el de trekking o el más grueso). Siempre viaja en tus pies en los días de vuelo y de bus.</li>
@@ -671,11 +651,11 @@ body:not([data-view="inicio"]) .hero{display:none}
           <ul>
             <li><b>Fondo:</b> par 3 de zapatillas en una bolsa.</li>
             <li><b>Documentos</b>, tarjetas y efectivo (las entradas del Colca son solo en efectivo).</li>
-            <li><b>Power bank y cables</b>: nunca en la maleta del bus.</li>
+            <li><b>Power bank y cables</b>: siempre en la mochila.</li>
             <li><b>Botiquín</b> (soroche, mareo, estómago) y la <b>bolsa de líquidos</b> de 100 ml arriba, para el control.</li>
             <li>Lentes, gorra, bloqueador chico, bálsamo, alcohol en gel y pañitos.</li>
-            <li>Gorro, guantes y buff: los usas al bajar en Arequipa y Puno.</li>
-            <li>Un polo y una ropa interior de emergencia, por si la maleta del bus se demora.</li>
+            <li>Gorro, guantes y buff: los usas en el Colca y en Salinas.</li>
+            <li>Para la noche en el Colca: una muda, térmica, cepillo de dientes y ropa de baño para las termales.</li>
           </ul>
         </div>
         <div class="card pack-card"><h3>🧥 Llévalo puesto</h3>
@@ -687,7 +667,7 @@ body:not([data-view="inicio"]) .hero{display:none}
           <p class="pack-sub" style="margin-top:10px">Esto saca de la maleta ~2.5 kg y casi la mitad del volumen.</p>
         </div>
       </div>
-      <div class="card pack-tips"><h3>Para la vuelta (Juliaca → Lima)</h3><ul>
+      <div class="card pack-tips"><h3>Para la vuelta (Arequipa → Lima)</h3><ul>
         <li>Los recuerdos de alpaca no te van a caber en la maleta: deja espacio en la mochila o ponte la chompa o la chalina nueva en el vuelo.</li>
         <li>La ropa usada ocupa más que la doblada: lleva una bolsa para la ropa sucia y compáctala.</li>
         <li>Revisa en tus reservas si el equipaje de mano está incluido en cada vuelo, y si la mochila (artículo personal) también se pesa.</li>
@@ -699,15 +679,15 @@ body:not([data-view="inicio"]) .hero{display:none}
   <section id="consejos-sec">
     <h2>Consejos</h2>
     <div class="grid3">
-      <div class="card dark"><h3>Reserven ya</h3><p style="margin:0">Los vuelos que faltan, el Colca del sábado 24 y el tour de Laguna Azul del domingo 18. Octubre tiene cupos limitados y los precios suben unos 40 días antes.</p></div>
+      <div class="card dark"><h3>Reserven ya</h3><p style="margin:0">Hoy viernes: los tours en Giardino (el Colca sale mañana) y el vuelo Arequipa → Lima del 30. Octubre tiene cupos limitados y los precios suben unos 40 días antes.</p></div>
       <div class="card"><h3>Evitar estafas</h3><p style="margin:0">Usen Uber, Cabify, InDriver o taxi del hotel. Cambien dinero en bancos o casas de cambio y reserven tours con agencias con oficina y reseñas, no con jaladores.</p></div>
-      <div class="card"><h3>Dónde dormir</h3><p style="margin:0">Tarapoto: cerca de la Plaza de Armas o, si quieren algo más tranquilo, frente al río Cumbaza. Arequipa: Plaza de Armas o Yanahuara. Puno: cerca de la plaza o del jirón Lima.</p></div>
+      <div class="card"><h3>Dónde dormir</h3><p style="margin:0">Tarapoto: cerca de la Plaza de Armas o, si quieren algo más tranquilo, frente al río Cumbaza. Arequipa: Plaza de Armas o Yanahuara.</p></div>
       <div class="card"><h3>Qué comer</h3><p style="margin:0">Tarapoto: juane, tacacho con cecina, patarashca y jugo de cocona. Arequipa: rocoto relleno, chupe de camarones, adobo (domingo en la mañana), ocopa y queso helado; La Nueva Palomino en Yanahuara.</p></div>
       <div class="card span2"><h3>Si algo cambia</h3><ul>
         <li>Llueve fuerte en la selva: cambien Chazuta por el día libre o por Lamas, que es más corto.</li>
-        <li>Se retrasa el vuelo Tarapoto–Arequipa: llegan a las 15:49, así que reserven la cena de aniversario desde las 8 pm para tener margen.</li>
-        <li>El Colca full day los deja muy cansados: el lunes 26 queda libre para dormir y ir solo a Yura o a Mollendo si tienen ganas.</li>
-        <li>Les pega la altura en Puno: el viernes 30 cambien Taquile (caminata en subida a 3,950 m) por Chucuito, que es medio día y plano.</li></ul></div>
+        <li>Llegan muy cansados del Colca: el lunes 26 solo descansen y pasen la Ruta del Sillar al miércoles, en lugar de Salinas.</li>
+        <li>La altura les pega en Salinas (4,300 m) o quieren un día libre: es el tour más prescindible; cámbienlo por las termas de Yura.</li>
+        <li>El vuelo del viernes 30 sale en la tarde: aprovechen la mañana para Mundo Alpaca o las últimas compras.</li></ul></div>
     </div>
   </section>
   <footer>
@@ -729,10 +709,10 @@ const CK = [
   ['7 pares de ropa interior'],
   ['7 pares de medias','2–3 gruesas para el frío'],
   ['1 muda más elegante','para la cena de aniversario']]},
- {t:'Abrigo', w:'Ripley / Oechsle, sección deportiva u outdoor', s:'Arequipa, Colca y Puno', items:[
+ {t:'Abrigo', w:'Ripley / Oechsle, sección deportiva u outdoor', s:'Arequipa, Colca y Salinas', items:[
   ['Casaca polar o fleece','abrigo medio',1],
-  ['Casaca exterior','cortavientos impermeable o de pluma ligera; encima del polar alcanza para Puno de noche',1],
-  ['Ropa térmica: polo y pantalón','para dormir en Puno y la salida de las 3 am al Colca',1],
+  ['Casaca exterior','cortavientos impermeable o de pluma ligera; encima del polar alcanza para el Colca de noche',1],
+  ['Ropa térmica: polo y pantalón','para la noche en el Colca y la madrugada en la Cruz del Cóndor',1],
   ['Gorro de lana','',1],
   ['Guantes','',1],
   ['Buff o chalina']]},
@@ -1184,6 +1164,63 @@ const GAL = {
 ],
 "24": [
 [
+"https://www.machupicchuterra.com/wp-content/uploads/mirador-patapampa-arequipa-full.jpg",
+"Mirador de los Volcanes (Patapampa)",
+"machupicchuterra.com"
+],
+[
+"https://terandes.com/wp-content/uploads/2023/11/Abra-de-Patapampa-Chivay-900x426.webp",
+"Mirador de los Volcanes (Patapampa)",
+"terandes.com"
+],
+[
+"https://terandes.com/wp-content/uploads/2023/01/Camino-Patapampa-900x675.webp",
+"Mirador de los Volcanes (Patapampa)",
+"terandes.com"
+],
+[
+"https://terandes.com/wp-content/uploads/2023/01/Apacehta-Patapampa-900x675.webp",
+"Mirador de los Volcanes (Patapampa)",
+"terandes.com"
+],
+[
+"https://peru-spezialisten.com/wp-content/uploads/2025/09/Mirador-de-Patapampa2.jpg",
+"Mirador de los Volcanes (Patapampa)",
+"peru-spezialisten.com"
+],
+[
+"https://topinkatravel.com/wp-content/uploads/2026/03/El-mirador-de-los-volcanes-1024x771.webp",
+"Mirador de los Volcanes (Patapampa)",
+"topinkatravel.com"
+],
+[
+"https://terandes.com/wp-content/uploads/2023/01/la-calera-chivay-banos-termales.jpg",
+"Baños termales La Calera",
+"terandes.com"
+],
+[
+"https://arequipaperu.info/wp-content/uploads/aguas-termales-calera.webp",
+"Baños termales La Calera",
+"arequipaperu.info"
+],
+[
+"https://terandes.com/wp-content/uploads/2023/01/La-Calera-900x675.webp",
+"Baños termales La Calera",
+"terandes.com"
+],
+[
+"https://www.chullostravelperu.com/blog/wp-content/uploads/2023/04/Banos-Termales-La-Calera-1.jpg",
+"Baños termales La Calera",
+"chullostravelperu.com"
+],
+[
+"https://images.myguide-cdn.com/md/common/large/5db6f896213d9-629454.jpg",
+"Baños termales La Calera",
+"images.myguide-cdn.com"
+]
+],
+"25": [
+[
 "https://terandes.com/wp-content/uploads/2023/01/Mirador-de-la-Cruz-del-condor.webp",
 "Cruz del Cóndor",
 "terandes.com"
@@ -1214,47 +1251,32 @@ const GAL = {
 "microbiologoviajero.com"
 ],
 [
-"https://www.machupicchuterra.com/wp-content/uploads/mirador-patapampa-arequipa-full.jpg",
-"Mirador de los Volcanes (Patapampa)",
-"machupicchuterra.com"
+"https://live.staticflickr.com/2884/9246079025_d32cd29e01_b.jpg",
+"Maca",
+"live.staticflickr.com"
 ],
 [
-"https://terandes.com/wp-content/uploads/2023/11/Abra-de-Patapampa-Chivay-900x426.webp",
-"Mirador de los Volcanes (Patapampa)",
-"terandes.com"
+"https://images.mnstatic.com/d0/8d/d08d26ada99f0e59eecaf7661c34660d.jpg",
+"Maca",
+"images.mnstatic.com"
 ],
 [
-"https://terandes.com/wp-content/uploads/2023/01/Camino-Patapampa-900x675.webp",
-"Mirador de los Volcanes (Patapampa)",
-"terandes.com"
+"https://www.viajandoporelmundomundial.com/wp-content/uploads/2024/04/maca-colca.jpg",
+"Maca",
+"viajandoporelmundomundial.com"
 ],
 [
-"https://www.vivearequipa.com/wp-content/uploads/2022/06/principal_reserva_aguda_blanca_salinas_divulgacion.jpg",
-"Salinas y Aguada Blanca",
-"vivearequipa.com"
-],
-[
-"https://www.wamanadventures.com/blog/wp-content/uploads/2020/01/Reserva-Nacional-Salinas-y-Aguada-Blanca.jpg",
-"Salinas y Aguada Blanca",
-"wamanadventures.com"
-],
-[
-"https://portal.andina.pe/EDPfotografia3/Thumbnail/2017/08/09/000441452W.webp",
-"Salinas y Aguada Blanca",
+"https://portal.andina.pe/EDPfotografia3/Thumbnail/2025/10/29/001220164W.webp",
+"Maca",
 "portal.andina.pe"
 ],
 [
-"https://terandes.com/wp-content/uploads/2023/01/la-calera-chivay-banos-termales.jpg",
-"Baños termales La Calera",
-"terandes.com"
-],
-[
-"https://arequipaperu.info/wp-content/uploads/aguas-termales-calera.webp",
-"Baños termales La Calera",
-"arequipaperu.info"
+"https://imgmedia.larepublica.pe/1000x590/larepublica/original/2023/06/10/6484348aac3d5f1806144d72.webp",
+"Maca",
+"imgmedia.larepublica.pe"
 ]
 ],
-"25": [
+"26": [
 [
 "https://denomades.imgix.net/destinos/arequipa/763/ruata-sillar.jpg?w=1200&h=800&fit=crop&auto=format,compress&q=80",
 "Ruta del Sillar",
@@ -1291,159 +1313,125 @@ const GAL = {
 "elbuho.pe"
 ]
 ],
-"26": [
-[
-"https://s3.amazonaws.com/imagenespantv/noticia/2026/01/orig-1768142722339.jpg",
-"Mollendo",
-"s3.amazonaws.com"
-],
-[
-"https://elbuho.pe/wp-content/uploads/2024/01/Mollendo_Arequipa__Calle_del_Comercio_y_Plaza_Bolognesi-e1705241040472.jpeg",
-"Mollendo",
-"elbuho.pe"
-],
-[
-"https://s3.amazonaws.com/imagenespantv/noticia/2024/03/orig-1711305259971.png",
-"Kayak en Mollendo",
-"s3.amazonaws.com"
-],
-[
-"https://diariocorreo.pe/resizer/v2/O2OHWFJ5TJG7XLXHPSE7YHLB6I.jpg?auth=125256f397b129aa50461f9d432eb8e2f8cd02462c497a47b77a62ed0c2a9085&width=980&height=528&quality=75&smart=true",
-"Baños termales de Yura",
-"diariocorreo.pe"
-],
-[
-"https://images.mnstatic.com/a8/58/a858100a6e80465652ce0a96e29751e6.jpg?quality=75&format=png&fit=crop&width=980&height=880&aspect_ratio=980%3A880",
-"Yura",
-"images.mnstatic.com"
-]
-],
 "27": [
 [
-"https://blog.incarail.com/wp-content/uploads/2025/09/lake-titicaca-puno-peru.webp",
-"Lago Titicaca desde Puno",
+"https://terandes.com/wp-content/uploads/2023/01/Molino-de-Sabandia-Arequipa-scaled.webp",
+"Molino de Sabandía",
+"terandes.com"
+],
+[
+"https://www.chullostravelperu.com/blog/wp-content/uploads/2025/11/Rueda-del-Tiempo-en-Sabandia.jpg",
+"Molino de Sabandía",
+"chullostravelperu.com"
+],
+[
+"https://miviaje.com/wp-content/uploads/2019/04/molino-sabandia-fachada.jpg",
+"Molino de Sabandía",
+"miviaje.com"
+],
+[
+"https://blog.incarail.com/wp-content/uploads/2024/10/Molino-De-Sabandia.jpg",
+"Molino de Sabandía",
 "blog.incarail.com"
 ],
 [
-"https://exploorperu.com/wp-content/uploads/2026/04/puno-things-to-do-cathedral-exploor-peru.webp",
-"Catedral de Puno",
-"exploorperu.com"
+"https://www.machupicchujourney.com/wp-content/uploads/2024/04/molinode-sabandia.jpg",
+"Molino de Sabandía",
+"machupicchujourney.com"
 ],
 [
-"https://exploorperu.com/wp-content/uploads/2026/04/puno-things-to-do-condor-viewpoint-exploor-peru.webp",
-"Mirador Kuntur Wasi",
-"exploorperu.com"
+"https://www.iperu.org/wp-content/uploads/2016/01/molino-de-sabandia.jpg",
+"Molino de Sabandía",
+"iperu.org"
 ],
 [
-"https://exploorperu.com/wp-content/uploads/2023/07/Top-Things-to-Do-and-See-in-Puno-The-Gateway-to-Lake-Titicaca-exploorperu-blog-habor-puno.png",
-"Puerto de Puno",
-"exploorperu.com"
+"https://terandes.com/wp-content/uploads/2023/01/Mansion-del-Fundador-de-Arequipa-1.webp",
+"Mansión del Fundador",
+"terandes.com"
 ],
 [
-"https://exploorperu.com/wp-content/uploads/2026/04/puno-things-to-do-casa-corregidor-exploor-peru.webp",
-"Casa del Corregidor",
-"exploorperu.com"
+"https://www.chullostravelperu.com/blog/wp-content/uploads/2025/11/Vista-aerea-de-la-Mansion-del-Fundador-al-atardecer-1.jpg",
+"Mansión del Fundador",
+"chullostravelperu.com"
 ],
 [
-"https://trexperienceperu.com/sites/default/files/styles/is_tipo_bloque_pagina_blogs_relacionados/public/2025-01/things-do-puno-inca-trail-47666-trexperience.jpg.webp?itok=yifwSqEK",
-"Puno",
-"trexperienceperu.com"
+"https://terandes.com/wp-content/uploads/2023/01/Mansion-del-Fundador-900x596.webp",
+"Mansión del Fundador",
+"terandes.com"
+],
+[
+"https://www.chullostravelperu.com/blog/wp-content/uploads/2025/11/Patio-interior-de-la-Mansion-del-Fundador-1.jpg",
+"Mansión del Fundador",
+"chullostravelperu.com"
+],
+[
+"https://www.viajaraperu.com/wp-content/uploads/2025/04/Vista-aerea-nocturna-de-la-Mansion-del-Fundador-y-sus-jardines.jpg",
+"Mansión del Fundador",
+"viajaraperu.com"
 ]
 ],
 "28": [
 [
-"https://denomades.imgix.net/destinos/puno/354/isla-de-uros.jpg?w=1200&h=800&fit=crop&auto=format,compress&q=80",
-"Islas de los Uros",
-"denomades.imgix.net"
+"https://www.vivearequipa.com/wp-content/uploads/2022/06/principal_reserva_aguda_blanca_salinas_divulgacion.jpg",
+"Salinas y Aguada Blanca",
+"vivearequipa.com"
 ],
 [
-"https://firebasestorage.googleapis.com/v0/b/travel-web-app-1.appspot.com/o/flamelink%2Fmedia%2Furos%20peru%20south%20america.jpg?alt=media&token=12f474d8-0c6c-42c0-8c71-259425707166",
-"Uros",
-"firebasestorage.googleapis.com"
+"https://www.wamanadventures.com/blog/wp-content/uploads/2020/01/Reserva-Nacional-Salinas-y-Aguada-Blanca.jpg",
+"Salinas y Aguada Blanca",
+"wamanadventures.com"
 ],
 [
-"https://firebasestorage.googleapis.com/v0/b/travel-web-app-1.appspot.com/o/flamelink%2Fmedia%2Ftiticaca%20lake%20totora%20reed%20boat%20peru%20-%20Canva%20-%20SL_Photography.jpg?alt=media&token=e597b5dc-efc1-461f-9ef6-b78fa2cab7d8",
-"Balsa de totora",
-"firebasestorage.googleapis.com"
+"https://portal.andina.pe/EDPfotografia3/Thumbnail/2017/08/09/000441452W.webp",
+"Salinas y Aguada Blanca",
+"portal.andina.pe"
 ],
 [
-"https://firebasestorage.googleapis.com/v0/b/travel-web-app-1.appspot.com/o/flamelink%2Fmedia%2Furos%20islands%20lake%20titicaca%20-%20Canva%20-%20izusek.jpg?alt=media&token=81f6cf1f-3cde-4bfc-8936-daf9ee9ddfc0",
-"Uros",
-"firebasestorage.googleapis.com"
+"https://blog.casa-andina.com/wp-content/uploads/2020/10/reserva-salinas-arequipa-peru-moquegua-peru-casa-andina-arequipa-casa-andina-moquegua-hotel-arequipa-hotel-moquegua-3.jpg",
+"Salinas y Aguada Blanca",
+"blog.casa-andina.com"
 ],
 [
-"https://exploorperu.com/wp-content/uploads/2026/04/puno-things-to-do-uros-islands-exploor-peru.webp",
-"Uros",
-"exploorperu.com"
+"https://peru.info/archivos/publicacion/248-imagen-1659411722020.jpg",
+"Salinas y Aguada Blanca",
+"peru.info"
+],
+[
+"https://www.condorxtreme.com/wp-content/uploads/2025/07/tour-reserva-nacional-de-aguada-blanca-y-laguna-salinas.jpg",
+"Salinas y Aguada Blanca",
+"condorxtreme.com"
 ]
 ],
 "29": [
 [
-"https://trexperienceperu.com/sites/default/files/2026-09/chullpa-panoramica-umayo.webp",
-"Chullpas de Sillustani",
-"trexperienceperu.com"
+"https://terandes.com/wp-content/uploads/2022/12/Mercado-de-San-Camilo.webp",
+"Mercado San Camilo",
+"terandes.com"
 ],
 [
-"https://trexperienceperu.com/sites/default/files/torres-funerarias-sillustani.webp",
-"Torres funerarias",
-"trexperienceperu.com"
+"https://www.7canibales.com/wp-content/uploads/sites/2/2023/06/IMG_7820-copia.jpeg",
+"Mercado San Camilo",
+"7canibales.com"
 ],
 [
-"https://trexperienceperu.com/sites/default/files/chullpas-laguna-umayo.webp",
-"Chullpas y laguna Umayo",
-"trexperienceperu.com"
+"https://blog.incarail.com/wp-content/uploads/2024/10/mercado-san-camilo.jpg",
+"Mercado San Camilo",
+"blog.incarail.com"
 ],
 [
-"https://denomades.imgix.net/destinos/puno/348/chullpas-de-sullistani-en-peru.jpg?w=1200&h=800&fit=crop&auto=format,compress&q=80",
-"Sillustani",
-"denomades.imgix.net"
+"https://blog.incarail.com/wp-content/uploads/2024/10/5-Apr-05-2024-03-36-07-1166-PM.jpg",
+"Mercado San Camilo",
+"blog.incarail.com"
 ],
 [
-"https://trexperienceperu.com/sites/default/files/laguna-umayo-sillustani_0.webp",
-"Laguna Umayo",
-"trexperienceperu.com"
+"https://encuentro.pe/wp-content/uploads/2025/04/IMG_4910-1.jpg",
+"Mercado San Camilo",
+"encuentro.pe"
 ],
 [
-"https://trexperienceperu.com/sites/default/files/mamposteria-funeraria-sillustani.webp",
-"Mampostería inca",
-"trexperienceperu.com"
-]
-],
-"30": [
-[
-"https://denomades.imgix.net/destinos/puno/354/isla-taquile.jpg?w=1200&h=800&fit=crop&auto=format,compress&q=80",
-"Isla Taquile",
-"denomades.imgix.net"
-],
-[
-"https://exploorperu.com/wp-content/uploads/2026/04/puno-things-to-do-taquile-island-exploor-peru.webp",
-"Isla Taquile",
-"exploorperu.com"
-],
-[
-"https://exploorperu.com/wp-content/uploads/2026/04/puno-things-to-do-peruvian-food-exploor-peru.webp",
-"Trucha y sopa de quinua",
-"exploorperu.com"
-],
-[
-"https://exploorperu.com/wp-content/uploads/2023/07/Top-Things-to-Do-and-See-in-Puno-The-Gateway-to-Lake-Titicaca-exploorperu-blog-locals-traditional-boat.png",
-"Bote en el lago",
-"exploorperu.com"
-],
-[
-"https://exploorperu.com/wp-content/uploads/2026/04/puno-things-to-do-festival-candelaria-exploor-peru.webp",
-"Fiesta de la Candelaria",
-"exploorperu.com"
-],
-[
-"https://www.civitatis.com/f/peru/puno/galeria/chucuito.jpg",
-"Chucuito",
-"civitatis.com"
-],
-[
-"https://www.civitatis.com/f/peru/puno/galeria/ruta-chucuito.jpg",
-"Chucuito",
-"civitatis.com"
+"https://elbuho.pe/wp-content/uploads/2025/10/Untitled-design-29.webp",
+"Mercado San Camilo",
+"elbuho.pe"
 ]
 ]
 };
@@ -1477,8 +1465,8 @@ const BUDGET = {
 // [origen, destino, fecha ISO, etiqueta, aerolínea, detalle, precio p/p]
 const LEGS = [
   ['LIM','TPP','2026-10-17','Sáb 17 oct','JetSMART','Reservado ✓ · JA7256, 10:40–12:06, directo 1h26. Pagaron S/720.02 los dos. Salgan de Villa El Salvador ~7:15.',360],
-  ['TPP','AQP','2026-10-22','Jue 22 oct','JetSMART','Reservado ✓ · JA7261 Tarapoto 11:02 → Lima 12:25 y JA7005 Lima 14:20 → Arequipa 15:49. Escala de 1h55. Reserva W94ZHM.',402],
-  ['JUL','LIM','2026-10-31','Sáb 31 oct','Por elegir','Juliaca → Lima, directo ~1h35. Precio estimado: falta cotizarlo. Desde Puno al aeropuerto hay ~1 h.',300]
+  ['TPP','AQP','2026-10-22','Jue 22 oct','JetSMART','Reservado ✓ · JA7261 Tarapoto 11:02 → Lima 12:25 y JA7005 Lima 14:20 → Arequipa 15:49. Escala de 1h55.',402],
+  ['AQP','LIM','2026-10-30','Vie 30 oct','Por elegir','Arequipa → Lima, directo ~1h35. Precio de referencia (cotizado para el 29): JetSMART S/222 o Sky desde S/207 por persona. Pueden usar los puntos BBVA.',222]
 ];
 
 // [día, día semana, texto, índice de vuelo opcional, clase opcional]
@@ -1493,17 +1481,14 @@ const DAYS = {
   ],
   aqp: [
     ['22','jue','Aniversario. 09:00 check-out del Airbnb de Tarapoto. Vuelo JetSMART JA7261 a las 11:02, escala en Lima (almuerzo en el aeropuerto) y JA7005 a Arequipa, llegan 15:49 (~16:30 en el Airbnb). Se alistan rápido, ~17:45 atardecer en el mirador de Yanahuara y cena especial.',1],
-    ['23','vie','Monasterio de Santa Catalina en la mañana, museo de la momia Juanita y almuerzo en picantería. Dormir temprano: el Colca sale de madrugada.'],
-    ['24','sáb','Colca en un día: recojo ~3 am, desayuno en Chivay, Cruz del Cóndor, miradores del valle y aguas termales; vicuñas y mirador de los Volcanes (4,910 m) en el camino. Regreso a Arequipa ~6–7 pm.'],
-    ['25','dom','Ruta del Sillar día completo: canteras de Añashuayco, tallado en sillar en vivo y la Quebrada de Culebrillas.'],
-    ['26','lun','Día para relajarse: playa en Mollendo (~2 h en bus) o, si prefieren algo más cerca, baños termales de Yura (~40 min). Regresen temprano: cena de rocoto relleno, maletas listas y a dormir, porque mañana salen a las 7:00.']
-  ],
-  puno: [
-    ['27','mar','07:00 check-out del Airbnb de Arequipa y taxi al Terminal Terrestre (~25 min). Bus 08:00 → llegan a Puno 14:00; taxi al centro (~15 min) y 15:00 check-in del Airbnb. Tarde tranquila por la altura: Plaza de Armas y jirón Lima.'],
-    ['28','mié','Noche en los Uros. Mañana libre en Puno. 11:00 al puerto con una mochila (las maletas se quedan en el Airbnb) y bote al lodge: 12:00 check-in. Paseo en balsa de totora, atardecer sobre el lago (~17:45), cena en la isla y cielo estrellado.'],
-    ['29','jue','Amanecer en el lago (~5:15) y desayuno en la isla. 11:00 check-out del lodge y bote al puerto; ~11:30 ya están en su Airbnb de Puno. 14:30 tour a las chullpas de Sillustani con atardecer en la laguna Umayo; regreso ~18:30.'],
-    ['30','vie','Isla Taquile día completo: recojo ~07:00, caminata, almuerzo de trucha y regreso ~16:30. Alternativa más suave: Chucuito y su templo de la Fertilidad (medio día). Cena de despedida.'],
-    ['31','sáb','Check-out del Airbnb antes de las 11:00; salgan unas 2 h 30 antes del vuelo. Traslado a Juliaca (~1 h) y vuelo a Lima; conviene uno que salga después de las 13:00. Domingo libre antes del trabajo el lunes.',2]
+    ['23','vie','Todo a pie por el centro. ~12:00 Museo Santuarios Andinos (Juanita, visita guiada de ~1 h). Almuerzo. ~14:30 pasen por Giardino Tours (Jerusalén 604-A) a reservar los tours: la oficina cierra a las 18:00 y el Colca sale mañana. ~15:00 Monasterio de Santa Catalina, a 2 cuadras (último ingreso ~17:00). ~17:45 taxi a Yanahuara para el atardecer.'],
+    ['24','sáb','Colca Plus con Giardino, día 1: Reserva de Salinas y Aguada Blanca con vicuñas, mirador de los Volcanes en Patapampa (4,910 m), almuerzo en el valle y baños termales. Noche en el lodge del tour. Lleven solo la mochila con abrigo; las maletas se quedan en el Airbnb.'],
+    ['25','dom','Colca Plus, día 2: Cruz del Cóndor en la mañana, que es cuando vuelan los cóndores, miradores de andenes y pueblos del valle. Regreso a Arequipa en la tarde (~17:00). Noche tranquila.'],
+    ['26','lun','Mañana libre para descansar después del Colca. ~14:00 Ruta del Sillar con Giardino (4 h): canteras de Añashuayco, tallado en sillar en vivo y la quebrada de Culebrillas con la luz de la tarde. Regreso ~18:00.'],
+    ['27','mar','09:00 Tour Campiña con Giardino (3 h): Paucarpata, Molino de Sabandía, Mansión del Fundador, mirador de Sachaca. Pidan que los dejen en Yanahuara al terminar. 12:00 ruta picantera por su cuenta: La Nueva Palomino al abrir (rocoto relleno, chupe de camarones, chicha de guiñapo) y queso helado en Punto Arequipa. Tarde libre.'],
+    ['28','mié','Laguna de Salinas con Giardino (8 h): flamencos, vicuñas y los volcanes Pichu Pichu y Ubinas a más de 4,300 m, con parada en el pueblo de Chiguata. Ya aclimatados por el Colca. Noche libre.'],
+    ['29','jue','Mañana en el mercado San Camilo (queso helado de Doña Rosa, segundo piso) y compras; Mundo Alpaca si les da tiempo. 14:30 Tour Peatonal al Atardecer con Giardino (3 h): Santa Teresa, San Francisco, mirador Tambo La Cabezona y cierre con una bebida frente a la Plaza de Armas. Cena de despedida.'],
+    ['30','vie','Check-out del Airbnb antes de las 11:00. Vuelo Arequipa → Lima (por elegir); el aeropuerto queda a ~25 min del centro, salgan 2 h antes del vuelo. Fin de semana libre antes del trabajo del lunes.',2]
   ]
 };
 
@@ -1539,7 +1524,7 @@ function initCarousels() {
 }
 const url = i => GF(LEGS[i][0], LEGS[i][1], LEGS[i][2]);
 
-const CRONO = [["16", "vie", "lima", "Libres para viajar", [["18:00", "Salen del trabajo", 0], ["21:00", "Libres en Villa El Salvador", 0]]], ["17", "sáb", "selva", "Lima → Tarapoto", [["07:15", "Salen de casa", 0], ["10:40", "Vuelo JA7256", 1], ["12:06", "Llegan", 0], ["15:00", "Check-in Airbnb", 0]]], ["18", "dom", "selva", "Laguna Azul", [["08:30", "Recojo del tour", 1], ["~18:00", "Regreso", 0]]], ["19", "lun", "selva", "Ahuashiyacu y Lamas", [["Mañana", "Catarata", 0], ["Tarde", "Lamas y Wayku", 0]]], ["20", "mar", "selva", "Alto Mayo y Tingana", [["~07:00", "Recojo del tour", 1], ["Noche", "Regreso", 0]]], ["21", "mié", "selva", "Chazuta", [["Día", "Tour completo", 1], ["Noche", "Maletas listas", 0]]], ["22", "jue", "aqp", "Tarapoto → Arequipa · aniversario", [["09:00", "Check-out", 0], ["11:02", "Vuelo JetSMART", 1], ["15:49", "Llegan", 0], ["~16:30", "Check-in Airbnb", 0], ["~17:45", "Yanahuara", 0], ["Noche", "Cena especial", 0]]], ["23", "vie", "aqp", "Santa Catalina y Juanita", [["Mañana", "Monasterio", 0], ["Tarde", "Museo", 0], ["Noche", "Dormir temprano", 0]]], ["24", "sáb", "aqp", "Colca en un día", [["03:00", "Recojo", 1], ["~18:30", "Regreso", 0]]], ["25", "dom", "aqp", "Ruta del Sillar", [["~09:00", "Recojo", 1], ["~17:00", "Regreso", 0]]], ["26", "lun", "aqp", "Mollendo o Yura", [["Día", "Relax", 0], ["Noche", "Maletas listas", 0]]], ["27", "mar", "puno", "Arequipa → Puno", [["07:00", "Check-out", 0], ["08:00", "Bus", 1], ["14:00", "Llegan", 0], ["15:00", "Check-in Airbnb", 0]]], ["28", "mié", "puno", "Noche en los Uros", [["11:00", "Al puerto", 1], ["12:00", "Check-in lodge", 0], ["~17:45", "Atardecer", 0]]], ["29", "jue", "puno", "Uros → Puno · Sillustani", [["~05:15", "Amanecer", 0], ["11:00", "Check-out lodge", 1], ["14:30", "Sillustani", 1]]], ["30", "vie", "puno", "Isla Taquile", [["~07:00", "Recojo", 1], ["~16:30", "Regreso", 0], ["Noche", "Despedida", 0]]], ["31", "sáb", "lima", "Puno → Juliaca → Lima", [["≤11:00", "Check-out", 0], ["~1 h", "Traslado", 1], ["Por elegir", "Vuelo a Lima", 1]]]];
+const CRONO = [["16", "vie", "lima", "Libres para viajar", [["18:00", "Salen del trabajo", 0], ["21:00", "Libres en Villa El Salvador", 0]]], ["17", "sáb", "selva", "Lima → Tarapoto", [["07:15", "Salen de casa", 0], ["10:40", "Vuelo JA7256", 1], ["12:06", "Llegan", 0], ["15:00", "Check-in Airbnb", 0]]], ["18", "dom", "selva", "Laguna Azul", [["08:30", "Recojo del tour", 1], ["~18:00", "Regreso", 0]]], ["19", "lun", "selva", "Ahuashiyacu y Lamas", [["Mañana", "Catarata", 0], ["Tarde", "Lamas y Wayku", 0]]], ["20", "mar", "selva", "Alto Mayo y Tingana", [["~07:00", "Recojo del tour", 1], ["Noche", "Regreso", 0]]], ["21", "mié", "selva", "Chazuta", [["Día", "Tour completo", 1], ["Noche", "Maletas listas", 0]]], ["22", "jue", "aqp", "Tarapoto → Arequipa · aniversario", [["09:00", "Check-out", 0], ["11:02", "Vuelo JetSMART", 1], ["15:49", "Llegan", 0], ["~16:30", "Check-in Airbnb", 0], ["~17:45", "Yanahuara", 0], ["Noche", "Cena especial", 0]]], ["23", "vie", "aqp", "Juanita y Santa Catalina", [["12:00", "Museo Juanita", 0], ["14:30", "Reservar en Giardino", 1], ["15:00", "Santa Catalina", 0], ["~17:45", "Atardecer en Yanahuara", 0]]], ["24", "sáb", "aqp", "Colca, día 1", [["Mañana", "Recojo Giardino", 1], ["Tarde", "Termas", 0], ["Noche", "Lodge en el valle", 0]]], ["25", "dom", "aqp", "Colca, día 2", [["Mañana", "Cruz del Cóndor", 1], ["~17:00", "Regreso", 0]]], ["26", "lun", "aqp", "Ruta del Sillar", [["Mañana", "Descanso", 0], ["~14:00", "Sillar y Culebrillas", 1], ["~18:00", "Regreso", 0]]], ["27", "mar", "aqp", "Campiña y picantería", [["09:00", "Tour Campiña", 1], ["12:00", "La Nueva Palomino", 0], ["Tarde", "Libre", 0]]], ["28", "mié", "aqp", "Laguna de Salinas", [["Mañana", "Recojo Giardino", 1], ["~8 h", "Tour", 0]]], ["29", "jue", "aqp", "Mercado y atardecer", [["Mañana", "San Camilo", 0], ["14:30", "Tour al atardecer", 1], ["Noche", "Cena de despedida", 0]]], ["30", "vie", "lima", "Arequipa → Lima", [["≤11:00", "Check-out", 0], ["Por elegir", "Vuelo a Lima", 1]]]];
 function renderCrono() {
   const now = new Date(), today = (now.getFullYear() === 2026 && now.getMonth() === 9) ? String(now.getDate()) : '';
   $('crono').innerHTML = CRONO.map(([d, wd, reg, title, items]) => `<li class="${reg}${d === today ? ' today' : ''}"><a href="#d-${d}">
@@ -1548,7 +1533,7 @@ function renderCrono() {
       <div class="t">${items.map(([t, l, k]) => `<span${k ? ' class="k"' : ''}><time>${esc(t)}</time>${esc(l)}</span>`).join('')}</div></div></a></li>`).join('');
 }
 function renderStatic() {
-  $('lead').textContent = 'Lima → Tarapoto → Arequipa y Colca → Puno → Lima. Del sábado 17 al sábado 31 de octubre de 2026, en pareja, sin trekking.';
+  $('lead').textContent = 'Lima → Tarapoto → Arequipa y Colca → Lima. Del sábado 17 al viernes 30 de octubre de 2026, en pareja, sin trekking.';
   $('fl-total').textContent = money(LEGS.reduce((a, l) => a + l[6], 0));
   $('flights').innerHTML = LEGS.map((l, i) => `
     <article class="fl">
@@ -1567,7 +1552,7 @@ function renderStatic() {
   const days = (id, list) => $(id).innerHTML = list.map(x =>
     `<li id="d-${x[0]}"${x[4] ? ` class="${x[4]}"` : ''}><div class="d">${x[0]}<small>${x[1]}</small></div><div>${esc(x[2])}${x[1] === 'dom' ? '<span class="sun">Domingo: opera</span>' : ''}${x[3] !== undefined ? `<br><a href="${url(x[3])}" target="_blank" rel="noopener">Buscar este vuelo en Google Flights ↗</a>` : ''}</div>${carousel(x[0])}</li>`).join('');
   renderCrono();
-  days('days-selva', DAYS.selva); days('days-aqp', DAYS.aqp); days('days-puno', DAYS.puno);
+  days('days-selva', DAYS.selva); days('days-aqp', DAYS.aqp);
   initCarousels();
   const bySite = {};
   Object.values(GAL).flat().forEach(([u, t, src]) => { (bySite[t] = bySite[t] || []).push([u, src]); });
